@@ -10,7 +10,7 @@ an [mvim](https://github.com/b4winckler/macvim/blob/master/src/MacVim/mvim) scri
 This `mvim` adds the line with `--remote-tab-silent` (and maybe some others).
 
 	  # mvim open in tabs
-	  exec opts="$opts --remote-tab-silent"
+	  opts="$opts --remote-tab-silent"
 
 ### mvimdiff ###
 
