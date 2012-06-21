@@ -29,6 +29,13 @@ This idea is from here: [http://zackhobson.com/2011/02/21/macvim-sessions.html](
 See [that site](http://zackhobson.com/2011/02/21/macvim-sessions.html) for details. 
 I forget this all the time. The `MacVim-vis-sessions.md` has brief, small summary, in `markdown`!
 
+### pandoc4md.css.md ###
+
+That is in `markdown` that is most import. Also it says what `pandoc4md.css` and `markdown2html.sh` do, where to put it, and what to do with them. I might forget what to put where. And it says whose ideas I ripped. Usage is like this,
+
+	  # typical, but shakey
+	  markdown2html.sh Readme.md
+
 
 If you stumbled here (eg. mistyped URL) do know: 
 -----------------------------------------------
