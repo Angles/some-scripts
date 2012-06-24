@@ -9,11 +9,19 @@
 #    pandoc -t html -o "$output" "$file"
 #done
 # the rest is based on that, pretty much, that parts that work
+### for your interest
+SAYDEBUG=
+SAYDEBUG=1
+
 PROGNAME="$(basename "$0")"
 function errorexit() {
   echo "$PROGNAME: $@"
   exit 1
 }
+if [[ "$1" == "-h" ]] || [[ "$1" == "--help" ]] ; then
+  echo "USAGE: $PROGNAME markdownfile.md"
+fi
+
 # this totally needs improvement
 # we do only 1 file here, WORKS with filename with spaces (put quotes on cmd line)
 file="${1}"
@@ -22,8 +30,10 @@ cd "$LOCATION"
 output=${file%%.*}.html
 # this totally needs improvement
 if [[ -f "$output" ]] ; then
-  errorexit "$output already exists, will not overwrite. exiting."
+  if [[ $SAYDEBUG -gt 0 ]] ; then say "Oops! H T M L file already exists."; fi
+  errorexit "$output file already exists. Will not overwrite. Exiting."
 fi
-echo "pandoc -t html -o $output $file"
+echo "doing: pandoc --standalone --include-in-header=\"$HOME/.pandoc/pandoc4md.css\" -t html -o \"$output\" \"$file\""
+
 /usr/local/bin/pandoc --standalone --include-in-header="$HOME/.pandoc/pandoc4md.css" -t html -o "$output" "$file"
 
