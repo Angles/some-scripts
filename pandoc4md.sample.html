@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  
+  <style type="text/css">
+  body {
+      margin: auto;
+      padding-right: 3em;
+      padding-left: 3em;
+      //max-width: 44em; 
+      border-left: 1px solid black;
+      border-right: 1px solid black;
+      color: black;
+      font-family: Verdana, sans-serif;
+      font-size: 100%;
+      //line-height: 140%;
+      color: #333; 
+  }
+  pre {
+      border: 1px dotted gray;
+      background-color: #ececec;
+      color: #1111111;
+      padding: 0.5em;
+  }
+  code {
+      //font-family: monospace;
+      font-size: 1.2em;
+  }
+  h1 a, h2 a, h3 a, h4 a, h5 a { 
+      text-decoration: none;
+      //color: #7a5ada; 
+      color: #6a5ada; 
+  }
+  h1, h2, h3, h4, h5 {
+      font-family: verdana;
+      font-weight: bold;
+      border-bottom: 1px dotted black;
+      //color: #7a5ada;
+  }
+  h1 {
+      font-size: 130%;
+  }
+  
+  h2 {
+     font-size: 110%;
+  }
+  
+  h3 {
+     font-size: 95%;
+  }
+  
+  h4 {
+     font-size: 90%;
+     font-style: italic;
+  }
+  
+  h5 {
+     font-size: 90%;
+     font-style: italic;
+  }
+  
+  h1.title {
+     font-size: 200%;
+     font-weight: bold;
+     padding-top: 0.2em;
+     padding-bottom: 0.2em;
+     text-align: left;
+     border: none;
+  }
+  
+  dt code {
+     font-weight: bold;
+  }
+  dd p {
+     margin-top: 0;
+  }
+  
+  #footer {
+     padding-top: 1em;
+     font-size: 70%;
+     color: gray;
+     text-align: center;
+  }
+  </style>
+  
+</head>
+<body>
+<h1 id="pandoc4md.css">pandoc4md.css</h1>
+<h3 id="the-css-file-pandoc4md.css">the css file <code>pandoc4md.css</code></h3>
+<p>I found a css file at <a href="http://johnmacfarlane.net/pandoc/demo/pandoc.css">http://johnmacfarlane.net/pandoc/demo/pandoc.css</a>, altered it so slightly, changed name to <code>pandoc4md.css</code> &amp; put it at <code>$HOME/.pandoc/pandoc4md.css</code>.</p>
+<pre><code>  # arrrgs to use it
+  --include-in-header=&quot;$HOME/.pandoc/pandoc4md.css&quot;</code></pre>
+<h1 id="markdown2html.sh">markdown2html.sh</h1>
+<h3 id="some-script-for-it-markdown2html.sh">some script for it <code>markdown2html.sh</code></h3>
+<p>Some where, maybe the <a href="https://github.com/dsanson/Pandoc-Droplets-and-Services">Pandoc-Droplets-and-Services</a> repo had simple scripts inside the service. I ripped that part, named it <code>markdown2html.sh</code> &amp; put those args in there. Shakey script, it works for me, somewhat.</p>
+<pre><code>  # it goes like this
+  pandoc --standalone --include-in-header=&quot;$HOME/.pandoc/pandoc4md.css&quot; \
+  -t html -o &quot;$output&quot; &quot;$file&quot;</code></pre>
+<h3 id="pandoc4md.css.md">pandoc4md.css.md</h3>
+<p>Everything must be in <code>markdown</code>, that's what this is, it is in <code>markdown</code>.</p>
+<h2 id="if-you-stumbled-here-eg-i-do-not-know-how">If you stumbled here (eg, I do not know how):</h2>
+<ol style="list-style-type: decimal">
+<li><p>These things I read on internets &amp; added to scripts haphazardly. I can not guarantee anything. &quot;As-Is&quot;.</p></li>
+<li><p>I know nothing about licenses. Whatever license(s) these files are supposed to be, they are.</p></li>
+<li><p>Whatever credits or clauses should be here, is temporary error of stupidity and poor memory.</p></li>
+<li><p>Dot files rule, bigger is better.</p></li>
+<li><p>Readme files, not a fan.</p></li>
+</ol>
+</body>
+</html>
