@@ -12,7 +12,7 @@ This here [`bin/mvim`](https://github.com/Angles/some-scripts/blob/master/bin/mv
 	  # mvim open in tabs
 	  opts="$opts --remote-tab-silent"
 
-### mvimdiff ###
+### bin/mvimdiff   _be like vimdiff_ (anyone remember vimdiff)!  ###
 
 Same deal, starts with the [mvim](https://github.com/b4winckler/macvim/blob/master/src/MacVim/mvim) 
 script from [MacVim](https://github.com/b4winckler/macvim) repo. Change name to `mvimdiff`
