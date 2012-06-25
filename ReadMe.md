@@ -3,11 +3,11 @@ Scripts
 
 they do stuff  __(As-Is)__
 
-### `mvim` open in tabs ###
+### bin/mvim   _open files in new tabs_  ###
 
 [MacVim](https://github.com/b4winckler/macvim) comes with 
 an [mvim](https://github.com/b4winckler/macvim/blob/master/src/MacVim/mvim) script.
-This `mvim` adds the line with `--remote-tab-silent` (and maybe some others).
+This here [`bin/mvim`](https://github.com/Angles/some-scripts/blob/master/bin/mvim) adds the line `--remote-tab-silent` (opens files in new tabs).
 
 	  # mvim open in tabs
 	  opts="$opts --remote-tab-silent"
