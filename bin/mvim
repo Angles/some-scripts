@@ -1,5 +1,5 @@
 #!/bin/sh
-# MVIM FROM https://github.com/b4winckler/macvim/blob/master/src/MacVim/mvim
+# *ALTERED* MVIM vs. original at  https://github.com/b4winckler/macvim/blob/master/src/MacVim/mvim
 # This shell script passes all its arguments to the binary inside the
 # MacVim.app application bundle.  If you make links to this script as view,
 # gvim, etc., then it will peek at the name used to call it and set options
@@ -37,6 +37,10 @@ binary="$VIM_APP_DIR/MacVim.app/Contents/MacOS/Vim"
 name="`basename "$0"`"
 gui=
 opts=
+
+# ==ME== always use --remote-tab-silent for this invocation
+# =ME= so multiple files will open in theor own tabe
+opts="$opts --remote-tab-silent"
 
 # GUI mode, implies forking
 case "$name" in m*|g*|rm*|rg*) gui=true ;; esac
