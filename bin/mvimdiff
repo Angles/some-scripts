@@ -1,6 +1,6 @@
 #!/bin/sh
-# THIS FILE is a simple RENAMED MVIM from https://github.com/b4winckler/macvim/blob/master/src/MacVim/mvim
-# Next commit changes do what VIMDIFF is suposed to do, for MacVim  -- MVIMDIFF
+# MVIMDIFF 1) starts as a renamed MVIM from https://github.com/b4winckler/macvim/blob/master/src/MacVim/mvim
+# 2) THEN FORCES "-gdOS" ARGS so MacVim acts like VIMDIFF is suposed to  -- MVIMDIFF
 #
 # This shell script passes all its arguments to the binary inside the
 # MacVim.app application bundle.  If you make links to this script as view,
@@ -40,6 +40,10 @@ name="`basename "$0"`"
 gui=
 opts=
 
+# ==ME== always use --remote-tab-silent for this invocation
+# =ME= so multiple files will open in theor own tabe
+opts="$opts --remote-tab-silent"
+
 # GUI mode, implies forking
 case "$name" in m*|g*|rm*|rg*) gui=true ;; esac
 
@@ -68,7 +72,28 @@ if [ "$gui" ]; then
 	# terminal instead of the console log.
 	# But if you use open instead, you will need to fully qualify the
 	# path names for any filenames you specify, which is hard.
-	exec "$binary" -g $opts ${1:+"$@"}
+  #echo  "${binary} -g $opts " '${1:+$"{@}"'
+	# ORIGINAL
+  #exec "$binary" -g $opts ${1:+"$@"}
+  # MY CHANGES
+  # THIS IS MVIMDIFF -- OPTION ACCORDINGLY
+  ## FIXME: the other .vis solution works, is this still needed?
+  if [[ $IS_SESSION == 0 ]]; then 
+    echo "$(basename "$0") in gui/yes & session == 0 case"
+    echo "${binary} -gdO  ${1:+$@}"
+    if [ -z "$PHONY" ] ; then  
+	    #exec "$binary" -gdO --remote-tab-silent ${1:+"$@"}
+	    #exec "${binary} -gdO  ${1:+"$@"}
+      exec "$binary" -gdO  ${1:+"$@"}
+    fi
+  else
+    # If you have a session does not it know it is a diff session?
+    echo "$(basename "$0") in gui/yes & untrue session == 0 case"
+	  echo "$binary -gdOS ${1:+$@}"
+    if [ -z "$PHONY" ] ; then  
+	    exec "$binary" -gdOS ${1:+"$@"}
+    fi
+  fi
 else
 	exec "$binary" $opts ${1:+"$@"}
 fi
