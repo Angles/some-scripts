@@ -31,7 +31,7 @@ I forget this all the time. The `MacVim-vis-sessions.md` has brief, small summar
 
 ### [pandoc4md.css.md](https://github.com/Angles/some-scripts/blob/master/pandoc4md.css.md) _make html less plain_   ###
 
-Everyone loves ___markdown___ like it's great pizza or something. But rendering it to HTML _need not suck so bad_ [example](https://github.com/Angles/some-scripts/blob/master/pandoc4md.sample.html). Because I might forget _what_ to put _where_, this here [pandoc4md.css.md](https://github.com/Angles/some-scripts/blob/master/pandoc4md.css.md), which is in _markdown_, explains what `pandoc4md.css` and `markdown2html.sh` do, where to put it, and what to do with them. And it says whose ideas I ripped. Usage is like this,
+Everyone loves ___markdown___ like it's great pizza or something. But rendering it to HTML _need not suck so bad_ [example](https://raw.github.com/Angles/some-scripts/master/pandoc4md.sample.html). Because I forget _what_ to put _where_, this here [pandoc4md.css.md](https://github.com/Angles/some-scripts/blob/master/pandoc4md.css.md), which is in _markdown_, explains it all: what `pandoc4md.css` and `markdown2html.sh` do, where to put it, and what to do with them. And it says whose ideas I ripped. Usage is like this,
 
 	  # typical, but shakey
 	  markdown2html.sh Readme.md
