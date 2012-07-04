@@ -3,7 +3,7 @@ Scripts
 
 they do stuff  __(As-Is)__
 
-### bin/mvim   _open files in new tabs_  ###
+### [bin/mvim](https://github.com/Angles/some-scripts/blob/master/bin/mvim)   _MacVim open files in new tabs_  ###
 
 [MacVim](https://github.com/b4winckler/macvim) comes with 
 an [mvim](https://github.com/b4winckler/macvim/blob/master/src/MacVim/mvim) script.
@@ -12,26 +12,26 @@ This here [`bin/mvim`](https://github.com/Angles/some-scripts/blob/master/bin/mv
 	  # mvim open in tabs
 	  opts="$opts --remote-tab-silent"
 
-### bin/mvimdiff   _be like vimdiff_ (anyone remember vimdiff)!  ###
+### [bin/mvimdiff](https://github.com/Angles/some-scripts/blob/master/bin/mvimdiff)   _make MacVim act like vimdiff_ (anyone remember vimdiff)?!  ###
 
 Same deal, starts with the [mvim](https://github.com/b4winckler/macvim/blob/master/src/MacVim/mvim) 
-script from [MacVim](https://github.com/b4winckler/macvim) repo. Change name to `mvimdiff`
-and make sure these letters `-gdOS` are there, make like vimdiff.
+script from [MacVim](https://github.com/b4winckler/macvim) repo. Change name to this here [`mvimdiff`](https://github.com/Angles/some-scripts/blob/master/bin/mvimdiff)
+and make sure these letters _`-gdOS`_ are there, make like vimdiff.
 
  	    
 	  # stuff diff args in there
 	  exec "$binary" -gdOS ${1:+"$@"}
 
 
-### MacVim-vis-sessions.md ###
+### [MacVim-vis-sessions.md](https://github.com/Angles/some-scripts/blob/master/MacVim-vis-sessions.md)  _easy MacVim sessions_ ###
  
 This idea is from here: [http://zackhobson.com/2011/02/21/macvim-sessions.html](http://zackhobson.com/2011/02/21/macvim-sessions.html). Restore a MacVim session with .vis files,
 See [that site](http://zackhobson.com/2011/02/21/macvim-sessions.html) for details. 
 I forget this all the time. The `MacVim-vis-sessions.md` has brief, small summary, in `markdown`!
 
-### pandoc4md.css.md ###
+### [pandoc4md.css.md](https://github.com/Angles/some-scripts/blob/master/pandoc4md.css.md) _make markdow 2 html [look less lame](https://github.com/Angles/some-scripts/blob/master/pandoc4md.sample.html)   ###
 
-That is in `markdown` that is most import. Also it says what `pandoc4md.css` and `markdown2html.sh` do, where to put it, and what to do with them. I might forget what to put where. And it says whose ideas I ripped. Usage is like this,
+Everyone loves ___`markdown`___ like it's great pizza or something. But rendering it to HTML [need not suck so bad](https://github.com/Angles/some-scripts/blob/master/pandoc4md.sample.html). Because I might forget _what_ to put _where_, this here [pandoc4md.css.md](https://github.com/Angles/some-scripts/blob/master/pandoc4md.css.md), which is in _markdown_, explains what `pandoc4md.css` and `markdown2html.sh` do, where to put it, and what to do with them. And it says whose ideas I ripped. Usage is like this,
 
 	  # typical, but shakey
 	  markdown2html.sh Readme.md
