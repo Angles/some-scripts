@@ -40,9 +40,8 @@ name="`basename "$0"`"
 gui=
 opts=
 
-# ==ME== always use --remote-tab-silent for this invocation
-# =ME= so multiple files will open in theor own tabe
-opts="$opts --remote-tab-silent"
+# ==ME== do not force --remote-tab-silent for diffs
+#opts="$opts --remote-tab-silent"
 
 # GUI mode, implies forking
 case "$name" in m*|g*|rm*|rg*) gui=true ;; esac
@@ -76,24 +75,10 @@ if [ "$gui" ]; then
 	# ORIGINAL
   #exec "$binary" -g $opts ${1:+"$@"}
   # MY CHANGES
-  # THIS IS MVIMDIFF -- OPTION ACCORDINGLY
-  ## FIXME: the other .vis solution works, is this still needed?
-  if [[ $IS_SESSION == 0 ]]; then 
-    echo "$(basename "$0") in gui/yes & session == 0 case"
-    echo "${binary} -gdO  ${1:+$@}"
-    if [ -z "$PHONY" ] ; then  
+  # THIS IS MVIMDIFF -- OPTION ACCORDINGLY for DIFFS, and no remote-tabs-silent here
 	    #exec "$binary" -gdO --remote-tab-silent ${1:+"$@"}
 	    #exec "${binary} -gdO  ${1:+"$@"}
       exec "$binary" -gdO  ${1:+"$@"}
-    fi
-  else
-    # If you have a session does not it know it is a diff session?
-    echo "$(basename "$0") in gui/yes & untrue session == 0 case"
-	  echo "$binary -gdOS ${1:+$@}"
-    if [ -z "$PHONY" ] ; then  
-	    exec "$binary" -gdOS ${1:+"$@"}
-    fi
-  fi
 else
 	exec "$binary" $opts ${1:+"$@"}
 fi
