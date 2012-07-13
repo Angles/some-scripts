@@ -15,11 +15,11 @@ __This here__ [`bin/mvim`](https://github.com/Angles/some-scripts/blob/master/bi
 ### File `bin/mvimdiff`  _act like vimdiff_  ###
 
 Same deal, starts with the [mvim](https://github.com/b4winckler/macvim/blob/master/src/MacVim/mvim) 
-script from [MacVim](https://github.com/b4winckler/macvim) repo. Change name to __this here__ [`mvimdiff`](https://github.com/Angles/some-scripts/blob/master/bin/mvimdiff) and make sure these letters __-gdOS__ are there, make like vimdiff.
+script from [MacVim](https://github.com/b4winckler/macvim) repo. Change name to __this here__ [`mvimdiff`](https://github.com/Angles/some-scripts/blob/master/bin/mvimdiff) and make sure these letters __-gdO__ are there, make like vimdiff.
 
  	    
 	  # stuff diff args in there
-	  exec "$binary" -gdOS ${1:+"$@"}
+	  exec "$binary" -gdO ${1:+"$@"}
 
 
 ### Notes `MacVim-vis-sessions.md` _easy MacVim sessions_ ###
