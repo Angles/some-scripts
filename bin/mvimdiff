@@ -40,7 +40,8 @@ name="`basename "$0"`"
 gui=
 opts=
 
-# ==ME== do not force --remote-tab-silent for diffs
+# =ME= force open in tabs --remote-tab-silent
+# BUT NOT FOR DIFFS
 #opts="$opts --remote-tab-silent"
 
 # GUI mode, implies forking
@@ -62,6 +63,27 @@ case "$name" in
 		;;
 esac
 
+
+## DEBUG - uncomment DUMP="y"
+unset $DUMP
+DUMP=
+#DUMP="y"
+if [ $DUMP ] ; then
+	echo "$(basename "$0") dumping var data:"
+	echo "  DUMP [$DUMP]"
+	echo "  -------- "
+	echo "  name [$name]"
+	echo "  gui [$gui]"
+	echo "  opts [$opts] (this var was used in original script)"
+	echo "  VIM_APP_DIR [$VIM_APP_DIR]"
+	echo "  binary [$binary]"
+	echo "  $ @ [$@]"
+	echo "End Var Dump"
+	echo "--------"
+	echo ""
+fi
+
+
 # Last step:  fire up vim.
 # The program should fork by default when started in GUI mode, but it does
 # not; we work around this when this script is invoked as "gvim" or "rgview"
@@ -71,14 +93,15 @@ if [ "$gui" ]; then
 	# terminal instead of the console log.
 	# But if you use open instead, you will need to fully qualify the
 	# path names for any filenames you specify, which is hard.
-  #echo  "${binary} -g $opts " '${1:+$"{@}"'
+	#echo  "${binary} -g $opts " '${1:+$"{@}"'
 	# ORIGINAL
-  #exec "$binary" -g $opts ${1:+"$@"}
-  # MY CHANGES
-  # THIS IS MVIMDIFF -- OPTION ACCORDINGLY for DIFFS, and no remote-tabs-silent here
-	    #exec "$binary" -gdO --remote-tab-silent ${1:+"$@"}
-	    #exec "${binary} -gdO  ${1:+"$@"}
-      exec "$binary" -gdO  ${1:+"$@"}
+	#exec "$binary" -g $opts ${1:+"$@"}
+	#
+	# MVIMDIFF VERSION
+	# ENSURES ARGS ARE CORRECTLY PLACED, MVIM $opts HAD AN ISSUE WITH SPACES
+	# --remote-tabs-silent no good for diff
+	#exec "$binary" -gdO --remote-tab-silent ${1:+"$@"}
+	exec "$binary" -gdO  ${1:+"$@"}
 else
 	exec "$binary" $opts ${1:+"$@"}
 fi
