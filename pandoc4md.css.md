@@ -41,20 +41,16 @@ ___What can I do? Speak up! I might forget!___
 
 The css file I pilfered, edited and renamed `pandoc4md.css` [__is right here__](https://github.com/Angles/some-scripts/blob/master/.pandoc/pandoc4md.css) to help! 
 `pandoc4md.css` is the _beta_ to the _alpha_ paramater `--include-in-header`, like this,
-
-``` Shell
+``` Bash
 /usr/local/bin/pandoc --include-in-header="$HOME/.pandoc/pandoc4md.css" -t html -o "$output" "$file"
 ```
-
 That applies a stylish (if __unorthodox__) HTML rendering from my tweaked `pandoc4md.css`.
 And __importantly__ brings brings the `~./pandoc/` directory, and its stock templates, 
 like `~/.pandoc/default.html` to bear in the monumental and, like, cool task of bearable `html`.
 Another code example:
-
-``` Shell
+``` Bash
 /usr/local/bin/pandoc --include-in-header="$HOME/.pandoc/pandoc4md.css" -t html "$mdfile" > "$htmlfile"
 ```
-
 Might render this file like [this](https://github.com/Angles/some-scripts/raw/master/pandoc4md.sample.html) or not, some browsers show only the `source code`, not so inspirational.
 
 ## Who did I rip, I mean, get inspired by.  ##
