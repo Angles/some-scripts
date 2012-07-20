@@ -8,10 +8,10 @@ they do stuff  __(As-Is)__
 [MacVim](https://github.com/b4winckler/macvim) comes with 
 an [mvim](https://github.com/b4winckler/macvim/blob/master/src/MacVim/mvim) script.
 __This here__ [`bin/mvim`](https://github.com/Angles/some-scripts/blob/master/bin/mvim) file adds the line `--remote-tab-silent` (opens files in new tabs).
-
+``` Bash
 	  # mvim open in tabs
 	  opts="$opts --remote-tab-silent"
-
+```
 ### File `bin/mvimdiff`  _act like vimdiff_  ###
 
 Same deal, starts with the [mvim](https://github.com/b4winckler/macvim/blob/master/src/MacVim/mvim) 
