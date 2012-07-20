@@ -63,8 +63,7 @@ I changed name to `pandoc4md.css` __to make it obvious to me what it is for__. P
 was what had I not named it such. __No one else will ever know anyway__! 
 
 
-The script `markdown2html.sh`
-============================
+# The script `markdown2html.sh` #
 
 File `~/bin/markdown2html.sh` applies the above _pandoc4md.css_ style to the markdown to HTML conversion. The code examples above are the basic stuff that's in there.
 
