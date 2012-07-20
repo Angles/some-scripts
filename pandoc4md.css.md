@@ -1,13 +1,12 @@
 `pandoc4md.css` and `markdown2html.sh`
 ====================================
 
-## What's is all about? ##
+## What it is all about ##
 
-Getting better results from markdown to html conversion. Better looking HTML.
-The seminal [Gruber](http://daringfireball.net/projects/markdown/) script `Markdown.pl` 
-from [his Markdown_1.0.1.zip](http://daringfireball.net/projects/downloads/Markdown_1.0.1.zip) renders HTML without even the `<html>` nor `<body>` tags.
-
-``` Shell
+Better markdown to html conversion. Better looking HTML.
+The [Gruber](http://daringfireball.net/projects/markdown/) script `Markdown.pl` 
+from [here](http://daringfireball.net/projects/downloads/Markdown_1.0.1.zip) renders HTML without even the `<html>` nor `<body>` tags.
+``` Bash
 #!/bin/bash 
 # (I did the shebang to try for the GitHub color rendering.)
 # using the Gruber script.
@@ -15,7 +14,6 @@ Markdown.pl Readme.markdown>Readme.html
 # using pandoc
 pandoc -f markdown -t html readme.md > readme.html
 ```
-
 In both cases, the rendered HTML has __no headers, no style__. It is a partial html file.
 
 ## How did this happen!! ##
