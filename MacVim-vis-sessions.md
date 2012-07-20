@@ -4,7 +4,7 @@
 
 A very brief something of the [zackhobson](http://zackhobson.com/2011/02/21/macvim-sessions.html) page.
 
-``` VimML
+``` VimL
 "Add this to your .gvimrc
 
 """ RESTORE SESSIONS
