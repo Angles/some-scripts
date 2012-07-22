@@ -20,11 +20,11 @@ script from [MacVim](https://github.com/b4winckler/macvim) repo. Change name to 
 # stuff diff args in there
 exec "$binary" -gdO ${1:+"$@"}
 ```
-### Notes `MacVim-vis-sessions.md` _easy MacVim sessions_ ###
+### Notes [`MacVim-vis-sessions.md`](https://github.com/Angles/some-scripts/blob/master/MacVim-vis-sessions.md) _easy MacVim sessions_ ###
  
 This idea is from here: [http://zackhobson.com/2011/02/21/macvim-sessions.html](http://zackhobson.com/2011/02/21/macvim-sessions.html). Restore a MacVim session with .vis files,
 See [that site](http://zackhobson.com/2011/02/21/macvim-sessions.html) for details. 
-I forget this all the time. Here, notes in [`MacVim-vis-sessions.md`](https://github.com/Angles/some-scripts/blob/master/MacVim-vis-sessions.md) are a brief, small summary. And it is in `markdown`!
+I forget this all the time. Here, notes here [`MacVim-vis-sessions.md`](https://github.com/Angles/some-scripts/blob/master/MacVim-vis-sessions.md) are a brief, small summary. And it is in `markdown`!
 
 
 ### File `pandoc4md.css.md` _make html less plain_   ###
