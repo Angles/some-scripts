@@ -3,7 +3,7 @@ Scripts
 
 they do stuff  __(As-Is)__
 
-### File `bin/mvim`   _open files in new tabs_  ###
+### File [`bin&#47mvim`](https://github.com/Angles/some-scripts/blob/master/bin/mvim)   _open files in new tabs_  ###
 
 [MacVim](https://github.com/b4winckler/macvim) comes with 
 an [mvim](https://github.com/b4winckler/macvim/blob/master/src/MacVim/mvim) script.
