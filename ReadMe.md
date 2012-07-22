@@ -3,7 +3,7 @@ Scripts
 
 they do stuff  __(As-Is)__
 
-### File [`bin&#47mvim`](https://github.com/Angles/some-scripts/blob/master/bin/mvim)   _open files in new tabs_  ###
+### File [`bin/mvim`](https://github.com/Angles/some-scripts/blob/master/bin/mvim)   _open files in new tabs_  ###
 
 [MacVim](https://github.com/b4winckler/macvim) comes with 
 an [mvim](https://github.com/b4winckler/macvim/blob/master/src/MacVim/mvim) script.
@@ -12,7 +12,7 @@ __This here__ [`bin/mvim`](https://github.com/Angles/some-scripts/blob/master/bi
 # mvim open in tabs
 opts="$opts --remote-tab-silent"
 ```
-### File `bin/mvimdiff`  _act like vimdiff_  ###
+### File [`bin/mvimdiff`](https://github.com/Angles/some-scripts/blob/master/bin/mvimdiff)  _act like vimdiff_  ###
 
 Same deal, starts with the [mvim](https://github.com/b4winckler/macvim/blob/master/src/MacVim/mvim) 
 script from [MacVim](https://github.com/b4winckler/macvim) repo. Change name to __this here__ [`mvimdiff`](https://github.com/Angles/some-scripts/blob/master/bin/mvimdiff) and make sure these letters __-gdO__ are there, make like vimdiff.
