@@ -5,14 +5,12 @@
 
 Better markdown to html conversion. Better looking HTML.
 The [Gruber](http://daringfireball.net/projects/markdown/) script `Markdown.pl` 
-from [here](http://daringfireball.net/projects/downloads/Markdown_1.0.1.zip) renders HTML without even the `<html>` nor `<body>` tags.
+from [here](http://daringfireball.net/projects/downloads/Markdown_1.0.1.zip) renders HTML without even the `<html>` or `<body>` tags. An obligatory code example,
 ``` Bash
-#!/bin/bash 
-# (I did the shebang to try for the GitHub color rendering.)
 # using the Gruber script.
-Markdown.pl Readme.markdown>Readme.html
+~/bin/Markdown.pl Readme.markdown > Readme.html
 # using pandoc
-pandoc -f markdown -t html readme.md > readme.html
+/usr/local/bin/pandoc -f markdown -t html readme.md > readme.html
 ```
 In both cases, the rendered HTML has __no headers, no style__. It is a partial html file.
 
@@ -37,10 +35,10 @@ So is it there!? Good. __Mine is, so that covers all readers right now__. But no
 ___What can I do? Speak up! I might forget!___
 
 
-## File `~/.pandoc/pandoc4md.css` ##
+## File [`~/.pandoc/pandoc4md.css`](https://github.com/Angles/some-scripts/blob/master/.pandoc/pandoc4md.css) ##
 
-The css file I pilfered, edited and renamed `pandoc4md.css` [__is right here__](https://github.com/Angles/some-scripts/blob/master/.pandoc/pandoc4md.css) to help! 
-`pandoc4md.css` is the _beta_ to the _alpha_ paramater `--include-in-header`, like this,
+The css file I pilfered, edited and renamed `pandoc4md.css` [__is here__](https://github.com/Angles/some-scripts/blob/master/.pandoc/pandoc4md.css) to help! 
+`pandoc4md.css` file is used with `--include-in-header`, like this,
 ``` Bash
 /usr/local/bin/pandoc --include-in-header="$HOME/.pandoc/pandoc4md.css" -t html -o "$output" "$file"
 ```
@@ -59,17 +57,21 @@ This `~/.pandoc/pandoc4md.css` started as a .css file I found at  [http://johnma
 I'm __noob__ at _css_, so I altered it just enough to get an interesting
 markdown to HTML rendering. Thus [pandoc4md.css](https://github.com/Angles/some-scripts/blob/master/.pandoc/pandoc4md.css) began its
 tragic, yet not unworthy, road to __this unknown repo__ on the outskirts of _the GitHub environs_.
-I changed name to `pandoc4md.css` __to make it obvious to me what it is for__. Put it at `$HOME/.pandoc/pandoc4md.css`, where it should be, many files are there, I'd forget what 
+I changed name to `pandoc4md.css` __to make it obvious to me what it is for__.
+
+Put it at `$HOME/.pandoc/pandoc4md.css`, where it should be. Many files are there, I'd forget what 
 was what had I not named it such. __No one else will ever know anyway__! 
 
 
-# The script `markdown2html.sh` #
+## Script [`markdown2html.sh`](https://github.com/Angles/some-scripts/blob/master/bin/markdown2html.sh) ##
 
 File `~/bin/markdown2html.sh` applies the above _pandoc4md.css_ style to the markdown to HTML conversion. The code examples above are the basic stuff that's in there.
 
 ### So who did I rip off this time, come out with it! ###
 
-Some where, maybe the [Pandoc-Droplets-and-Services](https://github.com/dsanson/Pandoc-Droplets-and-Services) repo had simple scripts inside the service. I ripped part of it, named it `markdown2html.sh` &amp; put that stuff mentioned above. __Shaky script.  It works for me, somewhat.__ It goes in `~/bin` just like [here](https://github.com/Angles/some-scripts/blob/master/bin/markdown2html.sh)! 
+Some where, maybe the [Pandoc-Droplets-and-Services](https://github.com/dsanson/Pandoc-Droplets-and-Services) repo had simple scripts inside the service. I ripped part of it, named it `markdown2html.sh` &amp; put that stuff mentioned above. __Shaky script.  It works for me, somewhat.__
+
+It goes in `~/bin` just like [here](https://github.com/Angles/some-scripts/blob/master/bin/markdown2html.sh). 
 
 TODO: The Script It generates an HTML name __but it will not overwrite__ an existing HTML file of that same name, from a previous MD to HTML conversion. Thus it needs logic to make an alternative HTML name in those cases.
 I'm sure the errors are mine.
