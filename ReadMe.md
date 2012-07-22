@@ -27,11 +27,13 @@ See [that site](http://zackhobson.com/2011/02/21/macvim-sessions.html) for detai
 I forget this all the time. Here, notes here [`MacVim-vis-sessions.md`](https://github.com/Angles/some-scripts/blob/master/MacVim-vis-sessions.md) are a brief, small summary. And it is in `markdown`!
 
 
-### File `pandoc4md.css.md` _make html less plain_   ###
+### Files [`pandoc4md.css.md`](https://github.com/Angles/some-scripts/blob/master/pandoc4md.css.md) _make html less plain_   ###
 
 Everyone loves ___markdown___ like it's great pizza or something. But rendering it to HTML _need not suck so bad_ [for example](https://raw.github.com/Angles/some-scripts/master/pandoc4md.sample.html). Because I forget _what_ to put _where_, __this here__ [pandoc4md.css.md](https://github.com/Angles/some-scripts/blob/master/pandoc4md.css.md), which is in _markdown_, explains what `pandoc4md.css` and `markdown2html.sh` do, where to put it, and what to do with them. And it says whose ideas I ripped. Usage is like this,
 ``` Bash
-# typical, but shakey
+# key line inside the script
+/usr/local/bin/pandoc --standalone --include-in-header="$HOME/.pandoc/pandoc4md.css" -t html -o "$output" "$file
+# the script itself, usage, typical, but shakey
 markdown2html.sh Readme.md
 ```
 If you stumbled here (eg. mistyped URL) do know: 
