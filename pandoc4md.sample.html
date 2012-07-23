@@ -1,10 +1,31 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="Content-Style-Type" content="text/css" />
-  <meta name="generator" content="pandoc" />
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
   <title></title>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
   
   <style type="text/css">
   body {
@@ -20,19 +41,56 @@
       //line-height: 140%;
       color: #333; 
   }
+  
+  /* http://perishablepress.com/perfect-pre-tags/
+  code, samp, kbd {
+  	font-family: "Courier New", Courier, monospace, sans-serif;
+  	text-align: left;
+  	color: #555;
+  	}
+  pre code {
+  	line-height: 1.6em;
+  	font-size: 11px;
+  	}
+  pre {
+  	padding: 0.1em 0.5em 0.3em 0.7em;
+  	border-left: 11px solid #ccc;
+  	margin: 1.7em 0 1.7em 0.3em;
+  	overflow: auto;
+  	width: 93%;
+  	}
+  */
+  /* target IE7 and IE6 */
+  /*
+  *:first-child+html pre {
+  	padding-bottom: 2em;
+  	overflow-y: hidden;
+  	overflow: visible;
+  	overflow-x: auto; 
+  	}
+  * html pre { 
+  	padding-bottom: 2em;
+  	overflow: visible;
+  	overflow-x: auto;
+  	}
+  */
+  
+  
   pre {
       border: 1px dotted gray;
-      background-color: #ececec;
-      color: #1111111;
+      background-color: #ECECEC;
+      color: #111111;
       padding: 0.5em;
   }
+  /*
   code {
-      //font-family: monospace;
+      // font-family: monospace;
       font-size: 1.2em;
   }
+  */
   h1 a, h2 a, h3 a, h4 a, h5 a { 
       text-decoration: none;
-      //color: #7a5ada; 
+      /* color: #7a5ada; */
       color: #6a5ada; 
   }
   h1, h2, h3, h4, h5 {
@@ -72,9 +130,11 @@
      border: none;
   }
   
+  
   dt code {
      font-weight: bold;
   }
+  
   dd p {
      margin-top: 0;
   }
@@ -91,33 +151,42 @@
 <body>
 <h1 id="pandoc4md.css-and-markdown2html.sh"><code>pandoc4md.css</code> and <code>markdown2html.sh</code></h1>
 <h2 id="what-it-is-all-about">What it is all about</h2>
-<p>Better markdown to html conversion. Better looking HTML. The <a href="http://daringfireball.net/projects/markdown/">Gruber</a> script <code>Markdown.pl</code> from <a href="http://daringfireball.net/projects/downloads/Markdown_1.0.1.zip">here</a> renders HTML without even the <code>&lt;html&gt;</code> nor <code>&lt;body&gt;</code> tags. <code>Bash #!/bin/bash  # (I did the shebang to try for the GitHub color rendering.) # using the Gruber script. Markdown.pl Readme.markdown&gt;Readme.html # using pandoc pandoc -f markdown -t html readme.md &gt; readme.html</code> In both cases, the rendered HTML has <strong>no headers, no style</strong>. It is a partial html file.</p>
-<h2 id="how-did-this-happen">How did this happen!!</h2>
-<p>Many later conversion methods emulate the Gruber script as a starting point. That is why the <code>pandoc</code> conversion gives the same results. Even the <strong>all powerful</strong> and <strong>most wise</strong> GitHub markdown to html readme rendering is pretty basic, <em>shhh, quiet</em>.</p>
-<h2 id="is-there-help-out-there">Is there help out there?</h2>
-<p><a href="http://johnmacfarlane.net/pandoc/installing.html">Pandoc</a> is fully pimped out for any conversion needs, a <em>universal document converter</em> <a href="http://johnmacfarlane.net/pandoc/">get it</a>. <code>Pandoc</code> <strong>can give</strong> a full and better <code>HTML</code> conversion result; yes the power is ready to burst out into snazzy markdown to HTML renders -- <strong><em>with a css file and a command param</em></strong>.</p>
-<p>The local <code>~/.pandoc</code> directory <em>should be there</em> already with the <code>Pandoc</code> install. So is it there!? Good. <strong>Mine is, so that covers all readers right now</strong>. But now, <strong>to use it</strong>.</p>
-<p><strong><em>What can I do? Speak up! I might forget!</em></strong></p>
-<h2 id="file-.pandocpandoc4md.css">File <code>~/.pandoc/pandoc4md.css</code></h2>
-<p>The css file I pilfered, edited and renamed <code>pandoc4md.css</code> <a href="https://github.com/Angles/some-scripts/blob/master/.pandoc/pandoc4md.css"><strong>is right here</strong></a> to help! <code>pandoc4md.css</code> is the <em>beta</em> to the <em>alpha</em> paramater <code>--include-in-header</code>, like this, <code>Bash /usr/local/bin/pandoc --include-in-header=&quot;$HOME/.pandoc/pandoc4md.css&quot; -t html -o &quot;$output&quot; &quot;$file&quot;</code> That applies a stylish (if <strong>unorthodox</strong>) HTML rendering from my tweaked <code>pandoc4md.css</code>. And <strong>importantly</strong> brings brings the <code>~./pandoc/</code> directory, and its stock templates, like <code>~/.pandoc/default.html</code> to bear in the monumental and, like, cool task of bearable <code>html</code>. Another code example: <code>Bash /usr/local/bin/pandoc --include-in-header=&quot;$HOME/.pandoc/pandoc4md.css&quot; -t html &quot;$mdfile&quot; &gt; &quot;$htmlfile&quot;</code> Might render this file like <a href="https://github.com/Angles/some-scripts/raw/master/pandoc4md.sample.html">this</a> or not, some browsers show only the <code>source code</code>, not so inspirational.</p>
-<h2 id="who-did-i-rip-i-mean-get-inspired-by.">Who did I rip, I mean, get inspired by.</h2>
-<p>This <code>~/.pandoc/pandoc4md.css</code> started as a .css file I found at <a href="http://johnmacfarlane.net/pandoc/demo/pandoc.css">http://johnmacfarlane.net/pandoc/demo/pandoc.css</a>. I'm <strong>noob</strong> at <em>css</em>, so I altered it just enough to get an interesting markdown to HTML rendering. Thus <a href="https://github.com/Angles/some-scripts/blob/master/.pandoc/pandoc4md.css">pandoc4md.css</a> began its tragic, yet not unworthy, road to <strong>this unknown repo</strong> on the outskirts of <em>the GitHub environs</em>. I changed name to <code>pandoc4md.css</code> <strong>to make it obvious to me what it is for</strong>. Put it at <code>$HOME/.pandoc/pandoc4md.css</code>, where it should be, many files are there, I'd forget what was what had I not named it such. <strong>No one else will ever know anyway</strong>!</p>
-<h1 id="the-script-markdown2html.sh">The script <code>markdown2html.sh</code></h1>
-<p>File <code>~/bin/markdown2html.sh</code> applies the above <em>pandoc4md.css</em> style to the markdown to HTML conversion. The code examples above are the basic stuff that's in there.</p>
-<h3 id="so-who-did-i-rip-off-this-time-come-out-with-it">So who did I rip off this time, come out with it!</h3>
-<p>Some where, maybe the <a href="https://github.com/dsanson/Pandoc-Droplets-and-Services">Pandoc-Droplets-and-Services</a> repo had simple scripts inside the service. I ripped part of it, named it <code>markdown2html.sh</code> &amp; put that stuff mentioned above. <strong>Shaky script. It works for me, somewhat.</strong> It goes in <code>~/bin</code> just like <a href="https://github.com/Angles/some-scripts/blob/master/bin/markdown2html.sh">here</a>!</p>
+<p>Better markdown to html conversion. Better looking HTML. The <a href="http://daringfireball.net/projects/markdown/">Gruber</a> script <code>Markdown.pl</code> from <a href="http://daringfireball.net/projects/downloads/Markdown_1.0.1.zip">here</a> renders HTML without even the <code>&lt;html&gt;</code> or <code>&lt;body&gt;</code> tags. The rendered HTML has <strong>no headers, no style</strong>. It is a partial html file. An obligatory code example.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># using the Gruber script.</span>
+~/bin/Markdown.pl Readme.markdown <span class="kw">&gt;</span> Readme.html
+<span class="co"># using pandoc in strict mode</span>
+/usr/local/bin/pandoc -f markdown -t html readme.md <span class="kw">&gt;</span> readme.html</code></pre>
+<h2 id="what-can-stop-the-madness">What can stop the madness?</h2>
+<p><a href="http://johnmacfarlane.net/pandoc/installing.html">Pandoc</a> is fully pimped out for any conversion needs, a <em>universal document converter</em> <a href="http://johnmacfarlane.net/pandoc/">get it</a>. <code>Pandoc</code> <strong>can give</strong> a full and better <code>HTML</code> conversion <strong><em>with a css file, and a command param</em></strong>.</p>
+<p>Note: To get Pandoc to render <a href="https://github.com/blog/832-rolling-out-the-redcarpet">GitHub color code blocks</a> right, <strong>I need to put 2 blank lines around these code blocks</strong>. <em>Pandoc likes it that way.</em></p>
+<h2 id="be-specific-no-more-b.s.">Be Specific, no more B.S.</h2>
+<p>I already forgot this <em>once</em> so here's the deal. Basic templates are in <code>/usr/local/share/pandoc-1.9.4.2/templates/</code> for example. Custom stuff goes in <strong>~/.pandoc/</strong>. I did this:</p>
+<ol type="1">
+<li><p>Make <code>$HOME./pandoc/</code></p></li>
+<li><p>Copy <code>/usr/local/share/pandoc-1.9.4.2/templates/default.html</code> to there, <code>$HOME./pandoc/default.html</code></p></li>
+<li><p>Copy the file here <a href="https://github.com/Angles/some-scripts/blob/master/.pandoc/pandoc4md.css"><code>~/.pandoc/pandoc4md.css</code></a> in there, so <code>$HOME./pandoc/pandoc4md.css</code></p></li>
+<li><p>That is all I needed, <strong>that covers all readers right now</strong>.</p></li>
+</ol>
+<h2 id="file-.pandocpandoc4md.css">File <a href="https://github.com/Angles/some-scripts/blob/master/.pandoc/pandoc4md.css"><code>~/.pandoc/pandoc4md.css</code></a></h2>
+<p>The css file I pilfered, edited and renamed <code>pandoc4md.css</code> <a href="https://github.com/Angles/some-scripts/blob/master/.pandoc/pandoc4md.css"><strong>is here</strong></a> applies a stylish (if <strong>unorthodox</strong>) HTML rendering used with <code>--include-in-header</code>, like this,</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># this example line from the markdown2html.sh script</span>
+/usr/local/bin/pandoc --include-in-header=<span class="st">&quot;</span><span class="ot">$HOME</span><span class="st">/.pandoc/pandoc4md.css&quot;</span> -t html -o <span class="st">&quot;</span><span class="ot">$output</span><span class="st">&quot;</span> <span class="st">&quot;</span><span class="ot">$file</span><span class="st">&quot;</span>
+<span class="co"># another example</span>
+/usr/local/bin/pandoc --include-in-header=<span class="st">&quot;</span><span class="ot">$HOME</span><span class="st">/.pandoc/pandoc4md.css&quot;</span> -t html <span class="st">&quot;</span><span class="ot">$mdfile</span><span class="st">&quot;</span> <span class="kw">&gt;</span> <span class="st">&quot;</span><span class="ot">$htmlfile</span><span class="st">&quot;</span></code></pre>
+<p>Might render this file like <a href="https://github.com/Angles/some-scripts/raw/master/pandoc4md.sample.html">this example</a> or not, some browsers show only the <code>source code</code>, not so inspirational.</p>
+<h3 id="who-did-i-rip-borrow-the-.css-from">Who did I rip, borrow the .css from?</h3>
+<p>Started as a .css file I found at <a href="http://johnmacfarlane.net/pandoc/demo/pandoc.css">http://johnmacfarlane.net/pandoc/demo/pandoc.css</a>. I'm <strong>noob</strong> at <em>css</em>, so I altered it just enough to get an interesting markdown to HTML rendering. I changed name to <code>pandoc4md.css</code> <strong>to make it obvious to me what it is for</strong>. Now it is here, in <strong>this unknown repo</strong> on the outskirts of <em>the GitHub environs</em>. The next file which <strong>no one else will ever see</strong> is:</p>
+<h2 id="script-markdown2html.sh">Script <a href="https://github.com/Angles/some-scripts/blob/master/bin/markdown2html.sh"><code>markdown2html.sh</code></a></h2>
+<p>File <code>~/bin/markdown2html.sh</code> applies the above <em>pandoc4md.css</em> style to the markdown to HTML conversion. The code examples above are the basic stuff that's in there. Useage is very simple.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># render file MarkdownRules.md to HTML </span>
+markdown2html.sh MarkdownRules.md
+<span class="co"># makes a file called MarkdownRules.html</span></code></pre>
+<h3 id="so-who-did-i-rip-off-this-time">So who did I rip off this time?</h3>
+<p>Some where, maybe the <a href="https://github.com/dsanson/Pandoc-Droplets-and-Services">Pandoc-Droplets-and-Services</a> repo had simple scripts inside the service. I ripped part of it, named it <code>markdown2html.sh</code> &amp; put that stuff mentioned above. <strong>Shaky script. It works for me, somewhat.</strong></p>
+<p>It goes in <code>~/bin</code> just like <a href="https://github.com/Angles/some-scripts/blob/master/bin/markdown2html.sh">here</a>.</p>
 <p>TODO: The Script It generates an HTML name <strong>but it will not overwrite</strong> an existing HTML file of that same name, from a previous MD to HTML conversion. Thus it needs logic to make an alternative HTML name in those cases. I'm sure the errors are mine.</p>
-<p>Ok I'm sick of this B.S., to wrap it up...</p>
-<h2 id="notes-pandoc4md.css.md---explains-why">Notes <code>pandoc4md.css.md</code> - explains, why?</h2>
-<ul>
-<li><p>Everything must be in <code>markdown</code>, and this file is in <code>markdown</code>.</p></li>
-<li><p>Without this I'd forget some of this stuff.</p></li>
-<li><p>It's raining, there is not much else to do. Boredom is somewhere between the lines.</p></li>
-<li><p>I wrote this a little here, some there. Slowly adding to this, this... thing.</p></li>
-<li><p>It took longer to write this than... I can't think of an analogy right now.</p></li>
-</ul>
 <h2 id="if-you-stumbled-here-e.g.-i-do-not-know-how">If you stumbled here (e.g., I do not know how):</h2>
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li><p>These things I read on internets &amp; added to scripts haphazardly. I can not guarantee anything. &quot;As-Is&quot;.</p></li>
 <li><p>I know nothing about licenses. Whatever license(s) these files are supposed to be, they are.</p></li>
 <li><p>Whatever credits or clauses should be here, is temporary error of stupidity and poor memory.</p></li>
