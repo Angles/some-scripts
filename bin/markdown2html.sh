@@ -33,7 +33,16 @@ if [[ -f "$output" ]] ; then
   if [[ $SAYDEBUG -gt 0 ]] ; then say "Oops! H T M L file already exists."; fi
   errorexit "$output file already exists. Will not overwrite. Exiting."
 fi
-echo "doing: pandoc --standalone --include-in-header=\"$HOME/.pandoc/pandoc4md.css\" -t html -o \"$output\" \"$file\""
+#echo "doing: pandoc --standalone --include-in-header=\"$HOME/.pandoc/pandoc4md.css\" -t html -o \"$output\" \"$file\""
 
-/usr/local/bin/pandoc --standalone --include-in-header="$HOME/.pandoc/pandoc4md.css" -t html -o "$output" "$file"
+#/usr/local/bin/pandoc --standalone --include-in-header="$HOME/.pandoc/pandoc4md.css" -t html -o "$output" "$file"
+#/usr/local/bin/pandoc --standalone --include-in-header="$HOME/.pandoc/pandoc4md.css" --highlight-style=espresso -f markdown -t html -o "$output" "$file"
+#/usr/local/bin/pandoc --standalone --include-in-header="$HOME/.pandoc/pandoc4md.css" --highlight-style=pygments -t html5 -o "$output" "$file"
+#/usr/local/bin/pandoc --standalone --include-in-header="$HOME/.pandoc/pandoc4md.css" --highlight-style=espresso -t html5 -o "$output" "$file"
+#/usr/local/bin/pandoc --standalone --include-in-header="$HOME/.pandoc/pandoc4md.css" --highlight-style=kate -t html5 -o "$output" "$file"
 
+#/usr/local/bin/pandoc --highlight-style=espresso --include-in-header="$HOME/.pandoc/pandoc4md.css" -t html -o "$output" "$file"
+#/usr/local/bin/pandoc --standalone --highlight-style=espresso -t html -o "$output" "$file"
+
+
+/usr/local/bin/pandoc --standalone --include-in-header="$HOME/.pandoc/pandoc4md.css" --highlight-style=pygments -t html5 -o "$output" "$file"
