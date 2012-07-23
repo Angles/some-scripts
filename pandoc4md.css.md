@@ -1,7 +1,7 @@
 `pandoc4md.css` and `markdown2html.sh`
 ====================================
 
-## What it is all about ##
+## What it is all about
 
 Better markdown to html conversion. Better looking HTML.
 The [Gruber](http://daringfireball.net/projects/markdown/) script `Markdown.pl` 
@@ -18,12 +18,11 @@ ___Is there help out there?___
 
 [Pandoc](http://johnmacfarlane.net/pandoc/installing.html) is fully pimped
 out for any conversion needs, a _universal document converter_ [get it](http://johnmacfarlane.net/pandoc/).
-`Pandoc` __can give__ a full and better `HTML` conversion result; yes the power is ready to 
-burst out into snazzy markdown to HTML renders -- ___with a css file, and a command param___.
+`Pandoc` __can give__ a full and better `HTML` conversion ___with a css file, and a command param___.
 
-## Be Specific, no more B.S. ##
+## Be Specific, no more B.S.
 
-The power is in the `~/.pandoc/` directory. I already forgot this _once_ or more, so: Pandoc puts basic templates at `/usr/local/share/pandoc-1.9.4.2/templates/` for example. The internets have tons of templates, but that confuses me, so I did this:
+I already forgot this _once_ so here's the deal. Basic templates are in `/usr/local/share/pandoc-1.9.4.2/templates/` for example. Custom stuff goes in __~/.pandoc/__. I did this:
 
 1. Make `$HOME./pandoc/`
 
@@ -31,37 +30,28 @@ The power is in the `~/.pandoc/` directory. I already forgot this _once_ or more
 
 3. Copy the file here [`~/.pandoc/pandoc4md.css`](https://github.com/Angles/some-scripts/blob/master/.pandoc/pandoc4md.css) in there, so `$HOME./pandoc/pandoc4md.css`
 
-4. That is all I need for this, so __that covers all readers right now__. 
+4. That is all I needed, __that covers all readers right now__. 
 
-## File [`~/.pandoc/pandoc4md.css`](https://github.com/Angles/some-scripts/blob/master/.pandoc/pandoc4md.css) ##
+## File [`~/.pandoc/pandoc4md.css`](https://github.com/Angles/some-scripts/blob/master/.pandoc/pandoc4md.css)
 
-The css file I pilfered, edited and renamed `pandoc4md.css` [__is here__](https://github.com/Angles/some-scripts/blob/master/.pandoc/pandoc4md.css) to help.
-`pandoc4md.css` file is used with `--include-in-header`, like this,
+The css file I pilfered, edited and renamed `pandoc4md.css` [__is here__](https://github.com/Angles/some-scripts/blob/master/.pandoc/pandoc4md.css) applies a stylish (if __unorthodox__) HTML rendering used with `--include-in-header`, like this,
 ``` Bash
+# this example line from the markdown2html.sh script
 /usr/local/bin/pandoc --include-in-header="$HOME/.pandoc/pandoc4md.css" -t html -o "$output" "$file"
-```
-That applies a stylish (if __unorthodox__) HTML rendering from my tweaked `pandoc4md.css`.
-And __importantly__ brings brings the `~./pandoc/` directory, and its stock templates, 
-like `~/.pandoc/default.html` to bear in the monumental and, like, cool task of bearable `html`.
-Another code example:
-``` Bash
+# another example
 /usr/local/bin/pandoc --include-in-header="$HOME/.pandoc/pandoc4md.css" -t html "$mdfile" > "$htmlfile"
 ```
-Might render this file like [this](https://github.com/Angles/some-scripts/raw/master/pandoc4md.sample.html) or not, some browsers show only the `source code`, not so inspirational.
+Might render this file like [this example](https://github.com/Angles/some-scripts/raw/master/pandoc4md.sample.html) or not, some browsers show only the `source code`, not so inspirational.
 
-## Who did I rip, I mean, get inspired by.  ##
+### Who did I rip, borrow the .css from?
 
-This `~/.pandoc/pandoc4md.css` started as a .css file I found at  [http://johnmacfarlane.net/pandoc/demo/pandoc.css](http://johnmacfarlane.net/pandoc/demo/pandoc.css).
+Started as a .css file I found at  [http://johnmacfarlane.net/pandoc/demo/pandoc.css](http://johnmacfarlane.net/pandoc/demo/pandoc.css).
 I'm __noob__ at _css_, so I altered it just enough to get an interesting
-markdown to HTML rendering. Thus [pandoc4md.css](https://github.com/Angles/some-scripts/blob/master/.pandoc/pandoc4md.css) began its
-tragic, yet not unworthy, road to __this unknown repo__ on the outskirts of _the GitHub environs_.
-I changed name to `pandoc4md.css` __to make it obvious to me what it is for__.
-
-Put it at `$HOME/.pandoc/pandoc4md.css`, where it should be. Many files are there, I'd forget what 
-was what had I not named it such. __No one else will ever know anyway__.
+markdown to HTML rendering. I changed name to `pandoc4md.css` __to make it obvious to me what it is for__. 
+Now it is here, in __this unknown repo__ on the outskirts of _the GitHub environs_. The next file which __no one else will ever see__ is:
 
 
-## Script [`markdown2html.sh`](https://github.com/Angles/some-scripts/blob/master/bin/markdown2html.sh) ##
+## Script [`markdown2html.sh`](https://github.com/Angles/some-scripts/blob/master/bin/markdown2html.sh)
 
 File `~/bin/markdown2html.sh` applies the above _pandoc4md.css_ style to the markdown to HTML conversion. The code examples above are the basic stuff that's in there. Useage is very simple.
 
@@ -71,7 +61,7 @@ markdown2html.sh MarkdownRules.md
 # makes a file called MarkdownRules.html
 ```
 
-### So who did I rip off this time? ###
+### So who did I rip off this time?
 
 Some where, maybe the [Pandoc-Droplets-and-Services](https://github.com/dsanson/Pandoc-Droplets-and-Services) repo had simple scripts inside the service. I ripped part of it, named it `markdown2html.sh` &amp; put that stuff mentioned above. __Shaky script.  It works for me, somewhat.__
 
