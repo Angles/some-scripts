@@ -85,18 +85,6 @@ TODO: [GitHub color code blocks](https://github.com/blog/832-rolling-out-the-red
 To wrap it up, essentially, these are my notes.
 
 
-## Notes `pandoc4md.css.md` - explains, why? ##
-
-*    Everything must be in `markdown`, and this file is in `markdown`.
-
-*    Without this I'd forget some of this stuff.
-
-*    It's raining, there is not much else to do. Boredom is somewhere between the lines.
-
-*    I wrote this a little here, some there. Slowly adding to this, this... thing.
-
-*	   It took longer to write this than... I can't think of an analogy right now.
-
 
 
 If you stumbled here (e.g., I do not know how): 
