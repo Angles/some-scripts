@@ -63,7 +63,13 @@ was what had I not named it such. __No one else will ever know anyway__.
 
 ## Script [`markdown2html.sh`](https://github.com/Angles/some-scripts/blob/master/bin/markdown2html.sh) ##
 
-File `~/bin/markdown2html.sh` applies the above _pandoc4md.css_ style to the markdown to HTML conversion. The code examples above are the basic stuff that's in there.
+File `~/bin/markdown2html.sh` applies the above _pandoc4md.css_ style to the markdown to HTML conversion. The code examples above are the basic stuff that's in there. Useage is very simple.
+
+``` Bash
+# render file MarkdownRules.md to HTML 
+markdown2html.sh MarkdownRules.md
+# makes a file called MarkdownRules.html
+```
 
 ### So who did I rip off this time? ###
 
