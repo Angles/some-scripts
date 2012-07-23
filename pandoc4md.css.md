@@ -14,14 +14,7 @@ from [here](http://daringfireball.net/projects/downloads/Markdown_1.0.1.zip) ren
 ```
 In both cases, the rendered HTML has __no headers, no style__. It is a partial html file.
 
-## How did this happen? ##
-
-Many later conversion methods emulate the Gruber script as a starting point.
-That is why the `pandoc` conversion gives the same results. 
-Even the __all powerful__ and __most wise__ GitHub markdown to html readme rendering is
-pretty basic, _shhh, quiet_. 
-
-## Is there help out there? ##
+___Is there help out there?___
 
 [Pandoc](http://johnmacfarlane.net/pandoc/installing.html) is fully pimped
 out for any conversion needs, a _universal document converter_ [get it](http://johnmacfarlane.net/pandoc/).
