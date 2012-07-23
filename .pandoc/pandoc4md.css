@@ -15,17 +15,19 @@ body {
 }
 pre {
     border: 1px dotted gray;
-    background-color: #ececec;
-    color: #1111111;
+    background-color: #ECECEC;
+    color: #111111;
     padding: 0.5em;
 }
+/*
 code {
-    //font-family: monospace;
+    // font-family: monospace;
     font-size: 1.2em;
 }
+*/
 h1 a, h2 a, h3 a, h4 a, h5 a { 
     text-decoration: none;
-    //color: #7a5ada; 
+    /* color: #7a5ada; */
     color: #6a5ada; 
 }
 h1, h2, h3, h4, h5 {
@@ -65,9 +67,11 @@ h1.title {
    border: none;
 }
 
+
 dt code {
    font-weight: bold;
 }
+
 dd p {
    margin-top: 0;
 }
