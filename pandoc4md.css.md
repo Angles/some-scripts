@@ -14,7 +14,7 @@ from [here](http://daringfireball.net/projects/downloads/Markdown_1.0.1.zip) ren
 ```
 In both cases, the rendered HTML has __no headers, no style__. It is a partial html file.
 
-## How did this happen!! ##
+## How did this happen? ##
 
 Many later conversion methods emulate the Gruber script as a starting point.
 That is why the `pandoc` conversion gives the same results. 
@@ -26,18 +26,23 @@ pretty basic, _shhh, quiet_.
 [Pandoc](http://johnmacfarlane.net/pandoc/installing.html) is fully pimped
 out for any conversion needs, a _universal document converter_ [get it](http://johnmacfarlane.net/pandoc/).
 `Pandoc` __can give__ a full and better `HTML` conversion result; yes the power is ready to 
-burst out into snazzy markdown to HTML renders -- ___with a css file and a command param___. 
+burst out into snazzy markdown to HTML renders -- ___with a css file, and a command param___.
 
-The local `~/.pandoc` directory _should be there_ already with the `Pandoc` install. 
-So is it there!? Good. __Mine is, so that covers all readers right now__. But now, __to use it__.
+## Be Specific, no more B.S. ##
 
+The power is in the `~/.pandoc/` directory. I already forgot this _once_ or more, so: Pandoc puts basic templates at `/usr/local/share/pandoc-1.9.4.2/templates/` for example. The internets have tons of templates, but that confuses me, so I did this:
 
-___What can I do? Speak up! I might forget!___
+1. Make `$HOME./pandoc/`
 
+2. Copy `/usr/local/share/pandoc-1.9.4.2/templates/default.html` to there, `$HOME./pandoc/default.html`
+
+3. Copy the file here [`~/.pandoc/pandoc4md.css`](https://github.com/Angles/some-scripts/blob/master/.pandoc/pandoc4md.css) in there, so `$HOME./pandoc/pandoc4md.css`
+
+4. That is all I need for this, so __that covers all readers right now__. 
 
 ## File [`~/.pandoc/pandoc4md.css`](https://github.com/Angles/some-scripts/blob/master/.pandoc/pandoc4md.css) ##
 
-The css file I pilfered, edited and renamed `pandoc4md.css` [__is here__](https://github.com/Angles/some-scripts/blob/master/.pandoc/pandoc4md.css) to help! 
+The css file I pilfered, edited and renamed `pandoc4md.css` [__is here__](https://github.com/Angles/some-scripts/blob/master/.pandoc/pandoc4md.css) to help.
 `pandoc4md.css` file is used with `--include-in-header`, like this,
 ``` Bash
 /usr/local/bin/pandoc --include-in-header="$HOME/.pandoc/pandoc4md.css" -t html -o "$output" "$file"
@@ -60,14 +65,14 @@ tragic, yet not unworthy, road to __this unknown repo__ on the outskirts of _the
 I changed name to `pandoc4md.css` __to make it obvious to me what it is for__.
 
 Put it at `$HOME/.pandoc/pandoc4md.css`, where it should be. Many files are there, I'd forget what 
-was what had I not named it such. __No one else will ever know anyway__! 
+was what had I not named it such. __No one else will ever know anyway__.
 
 
 ## Script [`markdown2html.sh`](https://github.com/Angles/some-scripts/blob/master/bin/markdown2html.sh) ##
 
 File `~/bin/markdown2html.sh` applies the above _pandoc4md.css_ style to the markdown to HTML conversion. The code examples above are the basic stuff that's in there.
 
-### So who did I rip off this time, come out with it! ###
+### So who did I rip off this time? ###
 
 Some where, maybe the [Pandoc-Droplets-and-Services](https://github.com/dsanson/Pandoc-Droplets-and-Services) repo had simple scripts inside the service. I ripped part of it, named it `markdown2html.sh` &amp; put that stuff mentioned above. __Shaky script.  It works for me, somewhat.__
 
@@ -76,7 +81,9 @@ It goes in `~/bin` just like [here](https://github.com/Angles/some-scripts/blob/
 TODO: The Script It generates an HTML name __but it will not overwrite__ an existing HTML file of that same name, from a previous MD to HTML conversion. Thus it needs logic to make an alternative HTML name in those cases.
 I'm sure the errors are mine.
 
-Ok I'm sick of this B.S., to wrap it up...
+TODO: [GitHub color code blocks](https://github.com/blog/832-rolling-out-the-redcarpet) not right.
+
+To wrap it up, essentially, these are my notes.
 
 
 ## Notes `pandoc4md.css.md` - explains, why? ##
