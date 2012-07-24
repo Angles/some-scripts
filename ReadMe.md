@@ -5,7 +5,7 @@ Scripts
 they do stuff  __(As-Is)__
 
 
-## Scipt __bin/mvim__  _open files in new tabs_
+## Script ___bin/mvim___  _open files in new tabs_
 
 
 [MacVim](https://github.com/b4winckler/macvim) comes with 
@@ -19,7 +19,7 @@ opts="$opts --remote-tab-silent"
 ```
 
 
-## Script __bin/mvimdiff__  _act like vimdiff_
+## Script ___bin/mvimdiff___  _rocks like vimdiff_
 
 
 Same deal, starts with the [mvim](https://github.com/b4winckler/macvim/blob/master/src/MacVim/mvim) 
