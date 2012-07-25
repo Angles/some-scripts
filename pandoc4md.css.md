@@ -34,7 +34,7 @@ I already forgot this _once_ so here's the deal. Basic templates are in `/usr/lo
 
 1. Make `$HOME./pandoc/`
 
-2. Copy `/usr/local/share/pandoc-1.9.4.2/templates/default.html` to there, `$HOME./pandoc/default.html`
+2. Copy `/usr/local/share/pandoc-1.9.4.2/templates/default.html` to there, `$HOME./pandoc/default.html` AND ALSO copy `default.html5` too, from that same place to the same place.
 
 3. Copy the file here [`~/.pandoc/pandoc4md.css`](https://github.com/Angles/some-scripts/blob/master/.pandoc/pandoc4md.css) in there, so `$HOME./pandoc/pandoc4md.css`
 
