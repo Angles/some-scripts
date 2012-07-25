@@ -54,14 +54,15 @@ pre {
     background-color: #ECECEC;
     color: #111111;
     padding: 0.5em;
+    overflow: auto;
 }
 
 pre, code, tt {
-   font-family: Consolas, "Liberation Mono", Courier, monospace;
+   font-family: Consolas, "Liberation Mono", Courier, Menlo, Monaco, "DejaVu Sans Mono", "Andale Momo", Courier, monospace;
 }
 
 code {
-    font-family: monospace;
+    //font-family: monospace;
     background-color: #F8F8F8;
     margin: 0 2px;
     padding: 0 5px;

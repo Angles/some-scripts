@@ -13,18 +13,13 @@ table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
 table.sourceCode { width: 100%; }
 td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
 td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; }
-code > span.dt { color: #902000; }
-code > span.dv { color: #40a070; }
-code > span.bn { color: #40a070; }
-code > span.fl { color: #40a070; }
-code > span.ch { color: #4070a0; }
-code > span.st { color: #4070a0; }
-code > span.co { color: #60a0b0; font-style: italic; }
-code > span.ot { color: #007020; }
-code > span.al { color: #ff0000; font-weight: bold; }
-code > span.fu { color: #06287e; }
-code > span.er { color: #ff0000; font-weight: bold; }
+code > span.kw { color: #0000ff; }
+code > span.ch { color: #008080; }
+code > span.st { color: #008080; }
+code > span.co { color: #008000; }
+code > span.ot { color: #ff4000; }
+code > span.al { color: #ff0000; }
+code > span.er { font-weight: bold; }
   </style>
   
   <style type="text/css">
@@ -76,18 +71,63 @@ code > span.er { color: #ff0000; font-weight: bold; }
   */
   
   
+  
   pre {
       border: 1px dotted gray;
       background-color: #ECECEC;
       color: #111111;
       padding: 0.5em;
+      overflow: auto;
   }
-  /*
+  
+  pre, code, tt {
+     font-family: Consolas, "Liberation Mono", Courier, Menlo, Monaco, "DejaVu Sans Mono", "Andale Momo", Courier, monospace;
+  }
+  
   code {
-      // font-family: monospace;
-      font-size: 1.2em;
+      //font-family: monospace;
+      background-color: #F8F8F8;
+      margin: 0 2px;
+      padding: 0 5px;
+      border: 1px solid #EAEAEA;
+      background-color: #F8F8F8;
+  }
+  
+  /*
+  pre {
+      background-color: #F8F8F8;
+      border-bottom-color: #CCC;
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+      border-left-color: #CCC;
+      border-left-style: solid;
+      border-left-width: 1px;
+      border-right-color: #CCC;
+      border-right-style: solid;
+      border-right-width: 1px;
+      border-top-color: #CCC;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+      border-top-style: solid;
+      border-top-width: 1px;
+      color: #333;
+      display: block;
+      font-family: Consolas, 'Liberation Mono', Courier, monospace;
+      margin-bottom: 15px;
+      margin-left: 0px;
+      margin-right: 0px;
+      margin-top: 15px;
+      overflow-x: auto;
+      overflow-y: auto;
+      padding-bottom: 6px;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 6px;
   }
   */
+  
   h1 a, h2 a, h3 a, h4 a, h5 a { 
       text-decoration: none;
       /* color: #7a5ada; */
@@ -163,27 +203,28 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <p>I already forgot this <em>once</em> so here's the deal. Basic templates are in <code>/usr/local/share/pandoc-1.9.4.2/templates/</code> for example. Custom stuff goes in <strong>~/.pandoc/</strong>. I did this:</p>
 <ol type="1">
 <li><p>Make <code>$HOME./pandoc/</code></p></li>
-<li><p>Copy <code>/usr/local/share/pandoc-1.9.4.2/templates/default.html</code> to there, <code>$HOME./pandoc/default.html</code></p></li>
+<li><p>Copy <code>/usr/local/share/pandoc-1.9.4.2/templates/default.html</code> to there, <code>$HOME./pandoc/default.html</code> AND also <code>default.html5</code> from same place to same place. Yeah.</p></li>
 <li><p>Copy the file here <a href="https://github.com/Angles/some-scripts/blob/master/.pandoc/pandoc4md.css"><code>~/.pandoc/pandoc4md.css</code></a> in there, so <code>$HOME./pandoc/pandoc4md.css</code></p></li>
-<li><p>That is all I needed, <strong>that covers all readers right now</strong>.</p></li>
+<li><p>Copy the file here <a href="https://github.com/Angles/some-scripts/blob/master/.pandoc/pandoc4md-zenburn.css"><code>~/.pandoc/pandoc4md-zenburn.css</code></a> in there, so <code>$HOME./pandoc/pandoc4md-zenburn.css</code></p></li>
+<li><p>That is all I needed, <strong>that covers all readers</strong>.</p></li>
 </ol>
-<h2 id="file-.pandocpandoc4md.css">File <a href="https://github.com/Angles/some-scripts/blob/master/.pandoc/pandoc4md.css"><code>~/.pandoc/pandoc4md.css</code></a></h2>
-<p>The css file I pilfered, edited and renamed <code>pandoc4md.css</code> <a href="https://github.com/Angles/some-scripts/blob/master/.pandoc/pandoc4md.css"><strong>is here</strong></a> applies a stylish (if <strong>unorthodox</strong>) HTML rendering used with <code>--include-in-header</code>, like this,</p>
+<h2 id="files-pandoc4md.css-and-pandoc4md-zenburn.css----whats-up">Files: <strong>pandoc4md.css</strong> and <strong>pandoc4md-zenburn.css</strong> -- What's up?</h2>
+<p>The css files I pilfered, edited and renamed, for example, <code>pandoc4md.css</code> <a href="https://github.com/Angles/some-scripts/blob/master/.pandoc/pandoc4md.css"><strong>is here</strong></a> applies a stylish (if <strong>unorthodox</strong>) HTML rendering used with <code>--include-in-header</code>, like this,</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># this example line from the markdown2html.sh script</span>
 /usr/local/bin/pandoc --include-in-header=<span class="st">&quot;</span><span class="ot">$HOME</span><span class="st">/.pandoc/pandoc4md.css&quot;</span> -t html -o <span class="st">&quot;</span><span class="ot">$output</span><span class="st">&quot;</span> <span class="st">&quot;</span><span class="ot">$file</span><span class="st">&quot;</span>
 <span class="co"># another example</span>
 /usr/local/bin/pandoc --include-in-header=<span class="st">&quot;</span><span class="ot">$HOME</span><span class="st">/.pandoc/pandoc4md.css&quot;</span> -t html <span class="st">&quot;</span><span class="ot">$mdfile</span><span class="st">&quot;</span> <span class="kw">&gt;</span> <span class="st">&quot;</span><span class="ot">$htmlfile</span><span class="st">&quot;</span></code></pre>
-<p>Might render this file like <a href="https://github.com/Angles/some-scripts/raw/master/pandoc4md.sample.html">this example</a> or not, some browsers show only the <code>source code</code>, not so inspirational.</p>
-<h3 id="who-did-i-rip-borrow-the-.css-from">Who did I rip, borrow the .css from?</h3>
+<p>Might render this file like <a href="https://github.com/Angles/some-scripts/raw/master/pandoc4md.sample.html">this example</a> <a href="https://github.com/Angles/some-scripts/raw/master/ReadMe.sample.zenburn.html">or this</a> or not, some browsers show only the <code>source code</code>, not so inspirational.</p>
+<h2 id="who-did-i-rip-borrow-the-.css-from">Who did I rip, borrow the .css from?</h2>
 <p>Started as a .css file I found at <a href="http://johnmacfarlane.net/pandoc/demo/pandoc.css">http://johnmacfarlane.net/pandoc/demo/pandoc.css</a>. I'm <strong>noob</strong> at <em>css</em>, so I altered it just enough to get an interesting markdown to HTML rendering. I changed name to <code>pandoc4md.css</code> <strong>to make it obvious to me what it is for</strong>. Now it is here, in <strong>this unknown repo</strong> on the outskirts of <em>the GitHub environs</em>. The next file which <strong>no one else will ever see</strong> is:</p>
-<h2 id="script-markdown2html.sh">Script <a href="https://github.com/Angles/some-scripts/blob/master/bin/markdown2html.sh"><code>markdown2html.sh</code></a></h2>
+<h2 id="script-markdown2html.sh----like-a-muscle-car-on-leaded-gas">Script: <strong>markdown2html.sh</strong> -- like a muscle car on leaded gas</h2>
 <p>File <code>~/bin/markdown2html.sh</code> applies the above <em>pandoc4md.css</em> style to the markdown to HTML conversion. The code examples above are the basic stuff that's in there. Useage is very simple.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># render file MarkdownRules.md to HTML </span>
 markdown2html.sh MarkdownRules.md
 <span class="co"># makes a file called MarkdownRules.html</span></code></pre>
 <h3 id="so-who-did-i-rip-off-this-time">So who did I rip off this time?</h3>
 <p>Some where, maybe the <a href="https://github.com/dsanson/Pandoc-Droplets-and-Services">Pandoc-Droplets-and-Services</a> repo had simple scripts inside the service. I ripped part of it, named it <code>markdown2html.sh</code> &amp; put that stuff mentioned above. <strong>Shaky script. It works for me, somewhat.</strong></p>
-<p>It goes in <code>~/bin</code> just like <a href="https://github.com/Angles/some-scripts/blob/master/bin/markdown2html.sh">here</a>.</p>
+<p>It goes in <code>~/bin</code> just like <a href="https://github.com/Angles/some-scripts/blob/master/bin/markdown2html.sh">here</a>. That's where scripts hang out.</p>
 <p>TODO: The Script It generates an HTML name <strong>but it will not overwrite</strong> an existing HTML file of that same name, from a previous MD to HTML conversion. Thus it needs logic to make an alternative HTML name in those cases. I'm sure the errors are mine.</p>
 <h2 id="if-you-stumbled-here-e.g.-i-do-not-know-how">If you stumbled here (e.g., I do not know how):</h2>
 <ol type="1">
