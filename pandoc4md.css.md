@@ -38,12 +38,14 @@ I already forgot this _once_ so here's the deal. Basic templates are in `/usr/lo
 
 3. Copy the file here [`~/.pandoc/pandoc4md.css`](https://github.com/Angles/some-scripts/blob/master/.pandoc/pandoc4md.css) in there, so `$HOME./pandoc/pandoc4md.css`
 
-4. That is all I needed, __that covers all readers right now__. 
+4. Copy the file here [`~/.pandoc/pandoc4md-zenburn.css`](https://github.com/Angles/some-scripts/blob/master/.pandoc/pandoc4md-zenburn.css) in there, so `$HOME./pandoc/pandoc4md-zenburn.css`
 
-## File [`~/.pandoc/pandoc4md.css`](https://github.com/Angles/some-scripts/blob/master/.pandoc/pandoc4md.css)
+6. That is all I needed, __that covers all readers__. 
 
 
-The css file I pilfered, edited and renamed `pandoc4md.css` [__is here__](https://github.com/Angles/some-scripts/blob/master/.pandoc/pandoc4md.css) applies a stylish (if __unorthodox__) HTML rendering used with `--include-in-header`, like this,
+## Files: __pandoc4md.css__ and __pandoc4md-zenburn.css__ -- What's up?
+
+The css files I pilfered, edited and renamed, for example, `pandoc4md.css` [__is here__](https://github.com/Angles/some-scripts/blob/master/.pandoc/pandoc4md.css) applies a stylish (if __unorthodox__) HTML rendering used with `--include-in-header`, like this,
 
 
 ``` bash
@@ -54,10 +56,10 @@ The css file I pilfered, edited and renamed `pandoc4md.css` [__is here__](https:
 ```
 
 
-Might render this file like [this example](https://github.com/Angles/some-scripts/raw/master/pandoc4md.sample.html) or not, some browsers show only the `source code`, not so inspirational.
+Might render this file like [this example](https://github.com/Angles/some-scripts/raw/master/pandoc4md.sample.html) [or this](https://github.com/Angles/some-scripts/raw/master/ReadMe.sample.zenburn.html) or not, some browsers show only the `source code`, not so inspirational.
 
 
-### Who did I rip, borrow the .css from?
+## Who did I rip, borrow the .css from?
 
 
 Started as a .css file I found at  [http://johnmacfarlane.net/pandoc/demo/pandoc.css](http://johnmacfarlane.net/pandoc/demo/pandoc.css).
@@ -66,7 +68,7 @@ markdown to HTML rendering. I changed name to `pandoc4md.css` __to make it obvio
 Now it is here, in __this unknown repo__ on the outskirts of _the GitHub environs_. The next file which __no one else will ever see__ is:
 
 
-## Script [`markdown2html.sh`](https://github.com/Angles/some-scripts/blob/master/bin/markdown2html.sh)
+## Script: __markdown2html.sh__ -- like a muscle car on leaded gas 
 
 File `~/bin/markdown2html.sh` applies the above _pandoc4md.css_ style to the markdown to HTML conversion. The code examples above are the basic stuff that's in there. Useage is very simple.
 
@@ -83,7 +85,7 @@ markdown2html.sh MarkdownRules.md
 
 Some where, maybe the [Pandoc-Droplets-and-Services](https://github.com/dsanson/Pandoc-Droplets-and-Services) repo had simple scripts inside the service. I ripped part of it, named it `markdown2html.sh` &amp; put that stuff mentioned above. __Shaky script.  It works for me, somewhat.__
 
-It goes in `~/bin` just like [here](https://github.com/Angles/some-scripts/blob/master/bin/markdown2html.sh). 
+It goes in `~/bin` just like [here](https://github.com/Angles/some-scripts/blob/master/bin/markdown2html.sh). That's where scripts hang out. 
 
 
 TODO: The Script It generates an HTML name __but it will not overwrite__ an existing HTML file of that same name, from a previous MD to HTML conversion. Thus it needs logic to make an alternative HTML name in those cases.
