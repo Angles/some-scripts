@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title></title>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; background-color: #303030; color: #cccccc; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; }
+td.sourceCode { padding-left: 5px; }
+pre, code { color: #cccccc; background-color: #303030; }
+code > span.kw { color: #f0dfaf; }
+code > span.dt { color: #dfdfbf; }
+code > span.dv { color: #dcdccc; }
+code > span.bn { color: #dca3a3; }
+code > span.fl { color: #c0bed1; }
+code > span.ch { color: #dca3a3; }
+code > span.st { color: #cc9393; }
+code > span.co { color: #7f9f7f; }
+code > span.ot { color: #efef8f; }
+code > span.al { color: #ffcfaf; }
+code > span.fu { color: #efef8f; }
+code > span.er { color: #c3bf9f; }
+  </style>
+  
+  <style type="text/css">
+  body {
+      margin: auto;
+      padding-right: 3em;
+      padding-left: 3em;
+      //max-width: 44em; 
+      border-left: 1px solid black;
+      border-right: 1px solid black;
+      //color: black;
+      font-family: Verdana, sans-serif;
+      font-size: 100%;
+      line-height: 140%;
+      //color: #333; 
+      //background-color: #DADADA;
+      //background-color: #003300;
+      //background-color: #001144;
+      //background-color: #001133;
+      background-color: #001122;
+      //color: #FFFFCC;
+      //color: #FFFFDF;
+      //color: #FFFFFE;
+      //color: #FEFFFF;
+      color: #FEFFFF;
+      //color: #66cc33;
+      //color: #FF0000;
+      margin: 7px;
+  }
+  
+  
+  pre, code {
+     font-family: Consolas, "Liberation Mono", Courier, "Courier New", monospace;
+    background-color: black;
+  }
+  
+  pre {
+      font-size:1.1em;
+      border: 1px dotted gray;
+      padding: 0.5em;
+  }
+  
+  code {
+      margin: 0 2px;
+      padding: 0 5px;
+      border: 1px;
+  }
+  
+  a:link { text-decoration: none; color:#C0C0C0; }
+  //a:visited { text-decoration: none; color:#C0C0C0; }
+  //a:visited { text-decoration: none; color:#707070; }
+  //a:visited { text-decoration: none; color:#CFCECD; }
+  //a:visited { text-decoration: none; color:#9999CC; }
+  //a:visited { text-decoration: none; color:#99CCFF; }
+  a:visited { text-decoration: none; color:#99CCCC; }
+  a:hover  { background-color: #303030; color:yellow;  }
+  a:active { text-decoration: none; }
+  a:focus {  color:green; }
+  
+  
+  pre {
+      //background-color: #F8F8F8;
+      border-bottom-color: #CCC;
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+      border-left-color: #CCC;
+      border-left-style: solid;
+      border-left-width: 1px;
+      border-right-color: #CCC;
+      border-right-style: solid;
+      border-right-width: 1px;
+      border-top-color: #CCC;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+      border-top-style: solid;
+      border-top-width: 1px;
+      //color: #333;
+      display: block;
+      margin-bottom: 15px;
+      margin-left: 0px;
+      margin-right: 0px;
+      margin-top: 15px;
+      overflow-x: auto;
+      overflow-y: auto;
+      padding-bottom: 6px;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 6px;
+  }
+  
+  
+  h1 a, h2 a, h3 a, h4 a, h5 a { 
+      text-decoration: none;
+      //color: #7a5ada;
+      //color: #6a5ada; 
+  }
+  h1, h2, h3, h4, h5 {
+      font-family: verdana;
+      font-weight: bold;
+      //border-bottom: 1px dotted white;
+      border-bottom: 1px outset white;
+      color: #EaEaea;
+  }
+  h1 {
+      font-size: 130%;
+  }
+  
+  h2 {
+     font-size: 110%;
+  }
+  
+  h3 {
+     font-size: 95%;
+  }
+  
+  h4 {
+     font-size: 90%;
+     font-style: italic;
+  }
+  
+  h5 {
+     font-size: 90%;
+     font-style: italic;
+  }
+  
+  h1.title {
+     font-size: 200%;
+     font-weight: bold;
+     padding-top: 0.2em;
+     padding-bottom: 0.2em;
+     text-align: left;
+     border: none;
+  }
+  
+  /*
+  dt code {
+     font-weight: bold;
+  }
+  
+  dd p {
+     margin-top: 0;
+  }
+  */
+  
+  #footer {
+     padding-top: 1em;
+     font-size: 70%;
+     color: gray;
+     text-align: center;
+  }
+  </style>
+  
+</head>
+<body>
+<h1 id="scripts">Scripts</h1>
+<p>they do stuff <strong>(As-Is)</strong></p>
+<h2 id="file-binmvim-open-files-in-new-tabs">File <a href="https://github.com/Angles/some-scripts/blob/master/bin/mvim"><code>bin/mvim</code></a> <em>open files in new tabs</em></h2>
+<p><a href="https://github.com/b4winckler/macvim">MacVim</a> comes with an <a href="https://github.com/b4winckler/macvim/blob/master/src/MacVim/mvim">mvim</a> script. <strong>This here</strong> <a href="https://github.com/Angles/some-scripts/blob/master/bin/mvim"><code>bin/mvim</code></a> file adds the line <code>--remote-tab-silent</code> (opens files in new tabs).</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># mvim open in tabs</span>
+<span class="ot">opts=</span><span class="st">&quot;</span><span class="ot">$opts</span><span class="st"> --remote-tab-silent&quot;</span></code></pre>
+<h2 id="file-binmvimdiff-act-like-vimdiff">File <a href="https://github.com/Angles/some-scripts/blob/master/bin/mvimdiff"><code>bin/mvimdiff</code></a> <em>act like vimdiff</em></h2>
+<p>Same deal, starts with the <a href="https://github.com/b4winckler/macvim/blob/master/src/MacVim/mvim">mvim</a> script from <a href="https://github.com/b4winckler/macvim">MacVim</a> repo. Change name to <strong>this here</strong> <a href="https://github.com/Angles/some-scripts/blob/master/bin/mvimdiff"><code>mvimdiff</code></a> and make sure these letters <strong>-gdO</strong> are there, make like vimdiff.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># stuff diff args in there</span>
+<span class="kw">exec</span> <span class="st">&quot;</span><span class="ot">$binary</span><span class="st">&quot;</span> -gdO <span class="ot">${1:+</span><span class="st">&quot;</span><span class="ot">$@</span><span class="st">&quot;</span><span class="ot">}</span></code></pre>
+<h2 id="files-pandoc4md.css.md-make-html-less-plain">Files <a href="https://github.com/Angles/some-scripts/blob/master/pandoc4md.css.md"><code>pandoc4md.css.md</code></a> <em>make html less plain</em></h2>
+<p>Everyone loves <strong><em>markdown</em></strong> like it's great pizza or something. But rendering it to HTML <em>need not suck so bad</em> <a href="https://raw.github.com/Angles/some-scripts/master/pandoc4md.sample.html">for example</a>. Because I forget <em>what</em> to put <em>where</em>, <strong>this here</strong> <a href="https://github.com/Angles/some-scripts/blob/master/pandoc4md.css.md">pandoc4md.css.md</a>, which is in <em>markdown</em>, explains what <code>pandoc4md.css</code> and <code>markdown2html.sh</code> do, where to put it, and what to do with them. And it says whose ideas I ripped. Usage is like this,</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># key line inside the script</span>
+/usr/local/bin/pandoc --standalone --include-in-header=<span class="st">&quot;</span><span class="ot">$HOME</span><span class="st">/.pandoc/pandoc4md.css&quot;</span> -t html -o <span class="st">&quot;</span><span class="ot">$output</span><span class="st">&quot;</span> <span class="st">&quot;</span><span class="ot">$file</span><span class="st">&quot;</span>
+<span class="co"># the script itself, usage, typical, but shakey</span>
+markdown2html.sh Readme.md</code></pre>
+<h2 id="notes-macvim-vis-sessions.md-easy-macvim-sessions">Notes <a href="https://github.com/Angles/some-scripts/blob/master/MacVim-vis-sessions.md"><code>MacVim-vis-sessions.md</code></a> <em>easy MacVim sessions</em></h2>
+<p>This idea is from here: <a href="http://zackhobson.com/2011/02/21/macvim-sessions.html">http://zackhobson.com/2011/02/21/macvim-sessions.html</a>. Restore a MacVim session with .vis files, See <a href="http://zackhobson.com/2011/02/21/macvim-sessions.html">that site</a> for details. I forget this all the time. Here, notes here <a href="https://github.com/Angles/some-scripts/blob/master/MacVim-vis-sessions.md"><code>MacVim-vis-sessions.md</code></a> are a brief, small summary. And it is in <code>markdown</code>!</p>
+<h2 id="if-you-stumbled-here-eg.-mistyped-url-do-know">If you stumbled here (eg. mistyped URL) do know:</h2>
+<ol type="1">
+<li><p>These things I read on internets &amp; added to scripts haphazardly. I can not guarantee anything. &quot;As-Is&quot;.</p></li>
+<li><p>I know nothing about licenses. Whatever license(s) these files are supposed to be, they are.</p></li>
+<li><p>Whatever credits or clauses should be here, is temporary error of stupidity and poor memory.</p></li>
+<li><p>Dot files rule, bigger is better.</p></li>
+<li><p>Readme files, not a fan.</p></li>
+</ol>
+</body>
+</html>

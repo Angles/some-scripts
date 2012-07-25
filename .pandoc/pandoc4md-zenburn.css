@@ -7,71 +7,58 @@ body {
     //max-width: 44em; 
     border-left: 1px solid black;
     border-right: 1px solid black;
-    color: black;
+    //color: black;
     font-family: Verdana, sans-serif;
     font-size: 100%;
-    //line-height: 140%;
-    color: #333; 
+    line-height: 140%;
+    //color: #333; 
+    //background-color: #DADADA;
+    //background-color: #003300;
+    //background-color: #001144;
+    //background-color: #001133;
+    background-color: #001122;
+    //color: #FFFFCC;
+    //color: #FFFFDF;
+    //color: #FFFFFE;
+    //color: #FEFFFF;
+    color: #FEFFFF;
+    //color: #66cc33;
+    //color: #FF0000;
+    margin: 7px;
 }
 
-/* http://perishablepress.com/perfect-pre-tags/
-code, samp, kbd {
-	font-family: "Courier New", Courier, monospace, sans-serif;
-	text-align: left;
-	color: #555;
-	}
-pre code {
-	line-height: 1.6em;
-	font-size: 11px;
-	}
-pre {
-	padding: 0.1em 0.5em 0.3em 0.7em;
-	border-left: 11px solid #ccc;
-	margin: 1.7em 0 1.7em 0.3em;
-	overflow: auto;
-	width: 93%;
-	}
-*/
-/* target IE7 and IE6 */
-/*
-*:first-child+html pre {
-	padding-bottom: 2em;
-	overflow-y: hidden;
-	overflow: visible;
-	overflow-x: auto; 
-	}
-* html pre { 
-	padding-bottom: 2em;
-	overflow: visible;
-	overflow-x: auto;
-	}
-*/
 
-
+pre, code {
+   font-family: Consolas, "Liberation Mono", Courier, "Courier New", monospace;
+  background-color: black;
+}
 
 pre {
+    font-size:1.1em;
     border: 1px dotted gray;
-    background-color: #ECECEC;
-    color: #111111;
     padding: 0.5em;
 }
 
-pre, code, tt {
-   font-family: Consolas, "Liberation Mono", Courier, monospace;
-}
-
 code {
-    font-family: monospace;
-    background-color: #F8F8F8;
     margin: 0 2px;
     padding: 0 5px;
-    border: 1px solid #EAEAEA;
-    background-color: #F8F8F8;
+    border: 1px;
 }
 
-/*
+a:link { text-decoration: none; color:#C0C0C0; }
+//a:visited { text-decoration: none; color:#C0C0C0; }
+//a:visited { text-decoration: none; color:#707070; }
+//a:visited { text-decoration: none; color:#CFCECD; }
+//a:visited { text-decoration: none; color:#9999CC; }
+//a:visited { text-decoration: none; color:#99CCFF; }
+a:visited { text-decoration: none; color:#99CCCC; }
+a:hover  { background-color: #303030; color:yellow;  }
+a:active { text-decoration: none; }
+a:focus {  color:green; }
+
+
 pre {
-    background-color: #F8F8F8;
+    //background-color: #F8F8F8;
     border-bottom-color: #CCC;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
@@ -88,9 +75,8 @@ pre {
     border-top-right-radius: 3px;
     border-top-style: solid;
     border-top-width: 1px;
-    color: #333;
+    //color: #333;
     display: block;
-    font-family: Consolas, 'Liberation Mono', Courier, monospace;
     margin-bottom: 15px;
     margin-left: 0px;
     margin-right: 0px;
@@ -102,18 +88,19 @@ pre {
     padding-right: 10px;
     padding-top: 6px;
 }
-*/
+
 
 h1 a, h2 a, h3 a, h4 a, h5 a { 
     text-decoration: none;
-    /* color: #7a5ada; */
-    color: #6a5ada; 
+    //color: #7a5ada;
+    //color: #6a5ada; 
 }
 h1, h2, h3, h4, h5 {
     font-family: verdana;
     font-weight: bold;
-    border-bottom: 1px dotted black;
-    //color: #7a5ada;
+    //border-bottom: 1px dotted white;
+    border-bottom: 1px outset white;
+    color: #EaEaea;
 }
 h1 {
     font-size: 130%;
@@ -146,7 +133,7 @@ h1.title {
    border: none;
 }
 
-
+/*
 dt code {
    font-weight: bold;
 }
@@ -154,6 +141,7 @@ dt code {
 dd p {
    margin-top: 0;
 }
+*/
 
 #footer {
    padding-top: 1em;
