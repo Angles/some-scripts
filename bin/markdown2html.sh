@@ -33,8 +33,9 @@ function errorexit() {
 
 ## COLORS ZENBURN AND DEFULT ONLY ARE SUPPORTED
 function usage {
+  echo "$PROGNAME converts Markdown and .rst reStructuredText files to HTML"
   echo "USAGE:   $PROGNAME [options] FILE"
-  echo "DEFAULT: $PROGNAME aMarkdownFile.md"
+  echo "DEFAULT: $PROGNAME aMarkdownFile.md or reSTfile.rst (not just .md extension)"
   echo "HELP:    $PROGNAME -h | --help   (so --haddock is -a not -h)"
   echo "colors: -t|--tango -a|--haddock -z|--zenburn -e|--espresso -k|--kate (pygments is default)"
   echo "EXAMPLE: $PROGNAME -z|--zenburn aMarkdownFile.md"
@@ -112,7 +113,9 @@ HTMLFNAME=
 						*.markdown)   HTMLFNAME="$(basename -s .markdown "$1").html"   ;;
 						*.md)       	HTMLFNAME="$(basename -s .md "$1").html"   ;;
 						*.mkd)       	HTMLFNAME="$(basename -s .mkd "$1").html"   ;;
-						*.mdown)   HTMLFNAME="$(basename -s .mdown "$1").html"   ;;
+						*.mdown)      HTMLFNAME="$(basename -s .mdown "$1").html"   ;;
+            # support reStructuredText too, ok since we dont use the -f markdown param
+						*.rst)        HTMLFNAME="$(basename -s .rst "$1").html"   ;;
 				*)        errorexit "'$1' not a typical markdown extension." ;;
 		esac
 else
