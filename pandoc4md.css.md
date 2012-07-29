@@ -26,6 +26,8 @@ out for any conversion needs, a _universal document converter_ [get it](http://j
 
 Note: To get Pandoc to render [GitHub color code blocks](https://github.com/blog/832-rolling-out-the-redcarpet) right, __I need to put 2 blank lines around these code blocks__. _Pandoc likes it that way._
 
+_Bonus_: this stuff ___also converts___ [__reStructuredText__](http://docutils.sourceforge.net/rst.html) to HTML. _No extra charge_.
+
 
 ## Be Specific, no more B.S.
 
@@ -39,6 +41,8 @@ I already forgot this _once_ so here's the deal. Basic templates are in `/usr/lo
 3. Copy the file here [`~/.pandoc/pandoc4md.css`](https://github.com/Angles/some-scripts/blob/master/.pandoc/pandoc4md.css) in there, so `$HOME./pandoc/pandoc4md.css`
 
 4. Copy the file here [`~/.pandoc/pandoc4md-zenburn.css`](https://github.com/Angles/some-scripts/blob/master/.pandoc/pandoc4md-zenburn.css) in there, so `$HOME./pandoc/pandoc4md-zenburn.css`
+
+5. Put script __markdown2html.sh__ in ~/bin like where scripts go.
 
 6. That is all I needed, __that covers all readers__. 
 
