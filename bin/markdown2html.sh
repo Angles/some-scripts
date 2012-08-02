@@ -10,6 +10,7 @@
 #done
 # the rest is based on that, pretty much, that parts that work
 ### for your interest
+
 SAYDEBUG=
 #SAYDEBUG=1
 
@@ -30,17 +31,27 @@ function errorexit() {
 #  echo "USAGE: $PROGNAME aMarkdownFile.md"
 #fi
 
-
+VERSION="0.001 pre-alpha"
+function version {
+  echo "$PROGNAME version $VERSION"
+  echo "  -v is not a color option. Maybe you want --help or -h"
+}
 ## COLORS ZENBURN AND DEFULT ONLY ARE SUPPORTED
 function usage {
   echo "$PROGNAME converts Markdown and .rst reStructuredText files to HTML"
-  echo "USAGE:   $PROGNAME [options] FILE"
-  echo "DEFAULT: $PROGNAME aMarkdownFile.md or reSTfile.rst (not just .md extension)"
-  echo "HELP:    $PROGNAME -h | --help   (so --haddock is -a not -h)"
-  echo "colors: -t|--tango -a|--haddock -z|--zenburn -e|--espresso -k|--kate (pygments is default)"
-  echo "EXAMPLE: $PROGNAME -z|--zenburn aMarkdownFile.md"
-  echo "EXAMPLE: $PROGNAME -a|--haddock aMarkdownFile.md"
-  echo "NOTE: --haddock is -a NOT -h because -h is help"
+  echo "USAGE:  $PROGNAME [options] FILE"
+  echo "help:   $PROGNAME -h | --help    (so -h is not --haddock, -a is)"
+  echo "    basic examples" 
+  echo "$ $PROGNAME aMarkdownFile.md   (other extensions work too)"
+  echo "$ $PROGNAME reSTfile.rst"
+  echo "    Color Syntax option are:" 
+  echo " -t|--tango -a|--haddock -z|--zenburn "
+  echo " -e|--espresso -k|--kate (pygments is default)"
+  echo "    Yet More Examples:" 
+  echo "$ $PROGNAME -z|--zenburn aMarkdownFile.md"
+  echo "$ $PROGNAME -a|--haddock aMarkdownFile.md"
+  echo "NOTE: -h is for help, so --haddock is -a short form."
+  echo "    Code colors by Pandoc, page style by this script" 
 }
 
 # OPTIONAL COLORSCHEME?
@@ -55,7 +66,7 @@ else
   case "$1" in
     --usage | -u ) usage ; exit 1 ;; # help 
     --help | -h ) usage ; exit 1 ;; # help 
-    --version | -v ) usage ; exit 1 ;; # help 
+    --version | -v ) version ; exit 1 ;; # useless version info help 
   #echo "colors: --tango --haddock --zenburn --espresso --kate (pygments is default)"
     --tango | -t )    shift
                       COLORSCHEME="tango" ;;  # other than default colorscheme 
