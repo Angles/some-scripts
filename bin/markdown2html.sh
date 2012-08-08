@@ -36,7 +36,10 @@ function version {
   echo "$PROGNAME version $VERSION"
   echo "  -v is not a color option. Maybe you want --help or -h"
 }
-## COLORS ZENBURN AND DEFULT ONLY ARE SUPPORTED
+## ALL Pandock code syntax colors ARE NOW SUPPORTED
+## BUT ONLY markdown are rst file types are handled since I generate 
+## the HTML output name using basename and a set of known file extensions
+## though in theory I could handle any Pandoc supported input file to HTML types  
 function usage {
   echo "$PROGNAME converts Markdown and .rst reStructuredText files to HTML"
   echo "USAGE:  $PROGNAME [options] FILE"
