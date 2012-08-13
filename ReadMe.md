@@ -32,7 +32,7 @@ exec "$binary" -gdO ${1:+"$@"}
 ```
 
 
-## Notes and files ___pandoc4md.css.md___  -- make html less plain
+## Info: ___pandoc4md.css.md___  -- make html less plain
 
 
 Everyone loves ___markdown___ like it's great pizza. But rendering it to HTML _need not suck so bad_ [for example](https://raw.github.com/Angles/some-scripts/master/pandoc4md.sample.html). Because I forget _what_ to put _where_, these __notes here__ [pandoc4md.css.md](https://github.com/Angles/some-scripts/blob/master/pandoc4md.css.md), in _markdown_, explain what those files do, where to put it, and what to do with them; _and whose ideas I ripped_. _Bonus_: this stuff  ___also converts___ [__reStructuredText__](http://docutils.sourceforge.net/rst.html) to HTML. _No extra charge, Pandoc does it all_. Required: Install [Pandoc](http://johnmacfarlane.net/pandoc/installing.html), and then these files from this repo:
