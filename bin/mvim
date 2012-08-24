@@ -38,9 +38,14 @@ name="`basename "$0"`"
 gui=
 opts=
 
-# ==ME== always use --remote-tab-silent for this invocation
-# =ME= so multiple files will open in theor own tabe
-opts="$opts --remote-tab-silent"
+
+
+#if [[ -p /dev/stdin ]]
+#then
+#	NOTABS=true
+#else
+#	opts="$opts --remote-tab-silent"
+#fi
 
 # GUI mode, implies forking
 case "$name" in m*|g*|rm*|rg*) gui=true ;; esac
@@ -61,6 +66,62 @@ case "$name" in
 		;;
 esac
 
+
+# ==ME== always use --remote-tab-silent for this invocation
+# =ME= so multiple files will open in MacVim tabs
+# HOWEVER, stdin and --remote-tab-silent do not like each other so much
+# so detect stdin piped input (but not the other 2 possible kinds)
+# detect args -bla or --bla
+# WORKS
+#grep -E '^-{1,2}\w'
+# simpler?
+#		case $1 in
+#			-*)	HASARGS=true ;;
+#		esac
+## if pipe in or is arg in cmdline, so not add --remote-tabs-silent
+GOTPIPE=
+HASARGS=
+if [[ -p /dev/stdin ]] ; then
+	GOTPIPE=true
+else
+	case $1 in
+		-*)	HASARGS=true ;;
+	esac
+fi
+
+if [[ ! "$GOTPIPE" ]] && [[ ! "$HASARGS" ]] ; then
+	opts="$opts --remote-tab-silent"
+fi
+
+
+## DEBUG - uncomment DUMP="y"
+unset $DUMP
+DUMP=
+#DUMP="y"
+if [ $DUMP ] ; then
+	echo "$(basename "$0") dumping var data:"
+	echo "  DUMP [$DUMP]"
+	echo "  -------- "
+	echo "  GOTPIPE [$GOTPIPE]"
+	echo "  HASARGS [$HASARGS]"
+	echo "  name [$name]"
+	echo "  gui [$gui]"
+	echo "  opts [$opts] (this var was used in original script)"
+	echo "  VIM_APP_DIR [$VIM_APP_DIR]"
+	echo "  binary [$binary]"
+	echo "  $ @ [$@]"
+	echo "  ${1:+\"$@\"} "
+	echo "  after binary the [ -g opts {1:+\"$ @ \"}]  will be"
+	echo "	#[ -g $opts ${1:+\"$@\"}]"
+	echo "End Var Dump"
+	echo "--------"
+	echo ""
+fi
+
+
+
+
+
 # Last step:  fire up vim.
 # The program should fork by default when started in GUI mode, but it does
 # not; we work around this when this script is invoked as "gvim" or "rgview"
@@ -71,6 +132,8 @@ if [ "$gui" ]; then
 	# But if you use open instead, you will need to fully qualify the
 	# path names for any filenames you specify, which is hard.
 	exec "$binary" -g $opts ${1:+"$@"}
+	#exec "$binary" -g $opts --remote-tab ${1:+"$@"}
+	#exec "$binary" --remote-tab -g $opts ${1:+"$@"}
 else
 	exec "$binary" $opts ${1:+"$@"}
 fi
