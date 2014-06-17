@@ -82,7 +82,7 @@ I forget this all the time. Here, notes here [`MacVim-vis-sessions.md`](https://
 If you stumbled here (eg. mistyped URL) do know: 
 -----------------------------------------------
 
-1.  *Shocker* it seems to work ***for me*** on Mavericks *use latest pandoc of course*! I hope it's the same script as here.
+1.  *Shocker* it seems the **pandoc to markdown preview** to work ***for me*** on Mavericks *use latest pandoc of course*! I hope it's the same script as here.
      Likely I'd forgot those pesky **BASH** tests, single brackets, double brackets, all these `eq` or stuff, you know, I love bash because it's so darn wierd, and impossible to remember, but it's so cool to make **MASSIVE** bash one liners, who can deny this!!!!
     You know what it's like when the cool  *pandoc* **has not changed some cmd line option**, so your script **still works** without changing it!! ***pandoc*** rulez man, seriously.
     Now READ ON... disclaimerville...
