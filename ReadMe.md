@@ -82,6 +82,10 @@ I forget this all the time. Here, notes here [`MacVim-vis-sessions.md`](https://
 If you stumbled here (eg. mistyped URL) do know: 
 -----------------------------------------------
 
+1.  *Shocker* it seems to work ***for me*** on Mavericks *use latest pandoc ofcourse*! I hope it's the same script as here.
+     Likely I'd forgot those pesky **BASH** tests, songle brackets, double brackets, all these `eq` or stuff, you know, I love bash because it's so darn wierd, and impossible to remember, but it's so cool to make **MASSIVE** bash one liners, who can deny this!!!!
+    Now READ ON... disclaimerville...
+
 1.  These things I read on internets &amp; added to scripts haphazardly.
     I can not guarantee anything. "As-Is".
 
